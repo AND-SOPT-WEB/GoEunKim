@@ -11,6 +11,7 @@ body {
   width: 100vw;
 }
 
+/* 헤더 */
 .home > header {
   position: fixed;
   display: flex;
@@ -23,11 +24,6 @@ body {
   background: none;
 }
 
-.home_banner__img {
-  width: 100%;
-  height: 100%;
-}
-
 .header__right,
 .header__left {
   display: flex;
@@ -38,9 +34,25 @@ body {
   width: 55%;
 }
 
+.header nav ul {
+  display: flex;
+  justify-content: space-between;
+  width: 40%;
+}
+
+.header > nav li:hover {
+  border-bottom: dotted 2px var(--blurBackGround);
+}
+
 .header__right {
   justify-content: end;
   width: 20%;
+}
+
+/* 홈 배너 */
+.home_banner__img {
+  width: 100%;
+  height: 100%;
 }
 
 .header__title,
@@ -52,12 +64,6 @@ body {
   font-family: sans-serif;
 }
 
-nav ul {
-  display: flex;
-  justify-content: space-between;
-  width: 40%;
-}
-
 .home_banner__etc {
   top: 70%;
   left: 70%;
@@ -67,16 +73,16 @@ nav ul {
   align-items: flex-end;
 }
 
-.home_banner__etc > span {
-}
-
 .home_banner__etc > span > p {
   font-size: 3rem;
-  color: #96f7ff;
+  color: var(--mainColor2);
   font-weight: 800;
 }
 
 .home_banner__button {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
   padding: 10px;
   border-radius: 10px;
   background-color: var(--blurBackGround);
@@ -89,7 +95,6 @@ nav ul {
   font-size: 1rem;
 }
 
-/* 호버시 버튼/텍스트  */
 .home_banner__button:hover {
   background-color: var(--buttonHover);
 }
@@ -99,40 +104,34 @@ nav ul {
   color: var(--textHover);
 }
 
-.home_banner__button {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-}
-
 /* 무한배너 */
-.infinite_bannner,
+.infinite_banner,
 .scroll_view {
   margin: 5rem 2rem 0 2rem;
 }
-.infinite_bannner__photos {
+.infinite_banner__photos {
   display: flex;
   width: 100%;
   margin-top: 3rem;
   overflow: hidden;
 }
 
-.bannner__list {
-  animation: roll 20s linear infinite;
+.banner__list {
+  animation: scroll 18s linear infinite;
   display: flex;
   justify-content: space-evenly;
 }
 
-.bannner__list > li {
+.banner__list > li {
   margin-left: 2rem;
   transition: transform 0.3s ease;
 }
 
-.bannner__list > li:hover {
+.banner__list > li:hover {
   transform: scale(1.13);
 }
 
-.bannner__list > li > img {
+.banner__list > li > img {
   width: 300px;
   height: 300px;
   transition: transform 0.3s ease;
@@ -142,7 +141,7 @@ nav ul {
   animation-delay: 20s;
 }
 
-@keyframes roll {
+@keyframes scroll {
   0% {
     transform: translateX(0);
   }
@@ -151,7 +150,7 @@ nav ul {
   }
 }
 
-/* 사진첩 */
+/* 스크롤뷰 */
 .scroll_view__photos {
   display: flex;
 }
@@ -194,6 +193,7 @@ footer {
   align-items: center;
   gap: 1rem;
   background-color: #3a3939;
+  text-align: center;
 }
 
 footer a,
