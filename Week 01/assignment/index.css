@@ -1,0 +1,145 @@
+@import './reset.css';
+
+body {
+  background-color: var(--backGround);
+  color: var(--mainColor);
+}
+
+.home {
+  position: relative;
+  height: 70vh;
+  width: 100vw;
+}
+
+.home > header {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1;
+  width: 100%;
+  height: 15%;
+  padding: 0 5%;
+  background: none;
+}
+
+.home_banner__img {
+  width: 100%;
+  height: 100%;
+}
+
+.header__right,
+.header__left {
+  display: flex;
+  font-size: 1.5rem;
+}
+
+.header__left {
+  width: 55%;
+}
+
+.header__right {
+  justify-content: end;
+  width: 20%;
+}
+
+.header__title,
+.banner_list--title {
+  font-size: 2rem;
+  font-weight: 900;
+  margin-right: 3rem;
+  font-family: sans-serif;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-between;
+  width: 40%;
+}
+
+.home_banner__etc {
+  top: 70%;
+  left: 70%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.home_banner__etc > span {
+}
+
+.home_banner__etc > span > p {
+  font-size: 3rem;
+  color: #96f7ff;
+  font-weight: 800;
+}
+
+.home_banner__button {
+  padding: 10px;
+  border-radius: 10px;
+  background-color: var(--blurBackGround);
+  width: 40%;
+  margin-top: 1rem;
+}
+
+.home_banner__button i,
+.home_banner__button p {
+  font-size: 1rem;
+}
+
+/* 호버시 버튼/텍스트  */
+.home_banner__button:hover {
+  background-color: #00000090;
+}
+
+.home_banner__button:hover i,
+.home_banner__button:hover p {
+  color: var(--textHover);
+}
+
+.home_banner__button {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* 무한배너 */
+.infinite_bannner {
+  margin-top: 3rem;
+}
+.infinite_bannner__photos {
+  display: flex;
+  width: 100%;
+  margin-top: 2rem;
+  overflow: hidden;
+}
+
+.infinite_bannner__photos ul {
+  display: flex;
+  justify-content: space-evenly;
+}
+.bannner__list {
+  animation: roll 20s linear infinite;
+}
+
+.bannner__list > li {
+  margin-left: 2rem;
+}
+.bannner__list > li > img {
+  width: 300px;
+  height: 300px;
+}
+
+.l1:last-child {
+  animation-delay: 20s;
+}
+
+@keyframes roll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
