@@ -44,7 +44,8 @@ body {
 }
 
 .header__title,
-.banner_list--title {
+.banner_list--title,
+.scroll_view--title {
   font-size: 2rem;
   font-weight: 900;
   margin-right: 3rem;
@@ -90,7 +91,7 @@ nav ul {
 
 /* 호버시 버튼/텍스트  */
 .home_banner__button:hover {
-  background-color: #00000090;
+  background-color: var(--buttonHover);
 }
 
 .home_banner__button:hover i,
@@ -105,30 +106,36 @@ nav ul {
 }
 
 /* 무한배너 */
-.infinite_bannner {
-  margin-top: 3rem;
+.infinite_bannner,
+.scroll_view {
+  margin: 5rem 2rem 0 2rem;
 }
 .infinite_bannner__photos {
   display: flex;
   width: 100%;
-  margin-top: 2rem;
+  margin-top: 3rem;
   overflow: hidden;
 }
 
-.infinite_bannner__photos ul {
-  display: flex;
-  justify-content: space-evenly;
-}
 .bannner__list {
   animation: roll 20s linear infinite;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .bannner__list > li {
   margin-left: 2rem;
+  transition: transform 0.3s ease;
 }
+
+.bannner__list > li:hover {
+  transform: scale(1.13);
+}
+
 .bannner__list > li > img {
   width: 300px;
   height: 300px;
+  transition: transform 0.3s ease;
 }
 
 .l1:last-child {
@@ -142,4 +149,54 @@ nav ul {
   100% {
     transform: translateX(-100%);
   }
+}
+
+/* 사진첩 */
+.scroll_view__photos {
+  display: flex;
+}
+
+.scroll_view__photos a {
+  width: 3%;
+  margin-top: 3rem;
+  align-content: center;
+  text-align: center;
+  background-color: var(--button);
+  border: none;
+  border-radius: 0.2rem;
+  cursor: pointer;
+}
+
+.scroll_view__photos > ul {
+  margin-top: 3rem;
+  display: flex;
+  overflow-x: scroll;
+}
+
+.scroll_view__photos > ul > li {
+  margin-left: 2rem;
+}
+
+.scroll_view__photos > ul > li > img {
+  width: 280px;
+  height: 350px;
+  border-radius: 1rem;
+}
+
+/* 푸터 */
+footer {
+  width: 100%;
+  height: 130px;
+  margin-top: 10rem;
+  padding-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  background-color: #3a3939;
+}
+
+footer a,
+footer p {
+  color: var(--textHover);
 }

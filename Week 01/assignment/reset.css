@@ -144,8 +144,8 @@ i {
 :root {
   --backGround: #1e1e1e;
   --blurBackGround: #000000b5;
-  --buttonHover: #34343490;
+  --button: #6969696e;
+  --buttonHover: #00000090;
   --textHover: #979797;
   --mainColor: #eeeeee;
-  --mainColor2: #96f7ff;
 }

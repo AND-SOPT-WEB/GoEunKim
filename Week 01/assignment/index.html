@@ -16,10 +16,9 @@
         <nav class="header__left">
           <h2 class="header__title">HappyGonni</h2>
           <ul>
-            <li><a href="#">홈 🏚️</a></li>
-            <li><a href="#">사진첩 📷</a></li>
-            <li><a href="#">리스트2 💬</a></li>
-            <li><a href="#">리스트3 💬</a></li>
+            <li><a href="#">홈</a></li>
+            <li><a href="#infinite_bannner">동물사진 🐶</a></li>
+            <li><a href="#scroll_view">큐티뽀쨕 사진첩 👀</a></li>
           </ul>
         </nav>
         <nav class="header__right">
@@ -49,29 +48,58 @@
       </div>
     </section>
     <main>
-      <section class="infinite_bannner">
-        <h2 class="banner_list--title">사진첩 📷</h2>
+      <!-- 무한 배너 -->
+      <section id="infinite_bannner" class="infinite_bannner">
+        <h2 class="banner_list--title">동물사진 모음 zip 🐶</h2>
         <section class="infinite_bannner__photos">
           <ul class="bannner__list l1">
-            <li><img alt="cute dog" src="./assets/pic1.jpeg" /></li>
-            <li><img alt="cute dog" src="./assets/pic2.jpeg" /></li>
-            <li><img src="./assets/pic3.jpeg" /></li>
-            <li><img src="./assets/pic4.jpeg" /></li>
-            <li><img src="./assets/pic5.jpeg" /></li>
-            <li><img src="./assets/pic6.jpeg" /></li>
+            <li><img alt="happy dog" src="./assets/pic1.jpeg" /></li>
+            <li><img alt="cute dochi" src="./assets/pic2.jpeg" /></li>
+            <li><img alt="cute dog" src="./assets/pic3.jpeg" /></li>
+            <li><img alt="blind dog" src="./assets/pic4.jpeg" /></li>
+            <li><img alt="guest dog" src="./assets/pic5.jpeg" /></li>
+            <li><img alt="annoying dog" src="./assets/pic6.jpeg" /></li>
           </ul>
           <ul class="bannner__list l2">
-            <li><img src="./assets/pic1.jpeg" /></li>
-            <li><img src="./assets/pic2.jpeg" /></li>
-            <li><img src="./assets/pic3.jpeg" /></li>
-            <li><img src="./assets/pic4.jpeg" /></li>
-            <li><img src="./assets/pic5.jpeg" /></li>
-            <li><img src="./assets/pic6.jpeg" /></li>
+            <li><img alt="happy dog" src="./assets/pic1.jpeg" /></li>
+            <li><img alt="cute dochi" src="./assets/pic2.jpeg" /></li>
+            <li><img alt="cute dog" src="./assets/pic3.jpeg" /></li>
+            <li><img alt="blind dog" src="./assets/pic4.jpeg" /></li>
+            <li><img alt="guest dog" src="./assets/pic5.jpeg" /></li>
+            <li><img alt="annoying dog" src="./assets/pic6.jpeg" /></li>
           </ul>
         </section>
       </section>
-      <section class="scroll__view"></section>
+      <!-- 스크롤 뷰 -->
+      <section id="scroll_view" class="scroll_view">
+        <h2 class="scroll_view--title">마음을 사르르 녹일 큐티뽀쨕 10선 👀</h2>
+        <section class="scroll_view__photos">
+          <a href="#first" class="move-left"><</a>
+          <ul class="bannner">
+            <li id="first"><img alt="happy dog" src="./assets/pic1.jpeg" /></li>
+            <li><img alt="cute dochi" src="./assets/pic2.jpeg" /></li>
+            <li><img alt="cute dog" src="./assets/pic3.jpeg" /></li>
+            <li><img alt="blind dog" src="./assets/pic4.jpeg" /></li>
+            <li><img alt="guest dog" src="./assets/pic5.jpeg" /></li>
+            <li><img alt="annoying dog" src="./assets/pic6.jpeg" /></li>
+            <li><img alt="sunglass dog" src="./assets/pic7.jpeg" /></li>
+            <li><img alt="interrupting dog" src="./assets/pic8.jpg" /></li>
+            <li id="last"><img alt="cute cat" src="./assets/pic9.jpg" /></li>
+          </ul>
+          <a href="#last" class="move-right">></a>
+        </section>
+      </section>
     </main>
-    <nav></nav>
+    <!-- 푸터 -->
+    <footer>
+      <nav>
+        <a href="https://blog.naver.com/rlarhdms6828"><strong>Blog : </strong>서이추 대환영 💬</a> |
+        <a href="https://github.com/gonn-i"><strong>Github : </strong> 맞팔 대대환영 🙇🏻‍♀️</a>
+      </nav>
+      <p>
+        <span>gonn-i week01 assignment 🌊</span><br />
+        <span>앞으로 우리 같이 힘내보아요 아자잣 🔥</span><br />
+      </p>
+    </footer>
   </body>
 </html>
