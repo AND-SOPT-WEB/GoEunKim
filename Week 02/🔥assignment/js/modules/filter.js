@@ -2,7 +2,7 @@
 const filterData = (datas, filters) => {
   return datas.filter((member) => {
     // 입력값이 없으면 -> true 처리 (why? 모든 멤버 All 포함 )
-    const matchedName = nameFilter ? member.name.includes(filters.name) : true;
+    const matchedName = filters.name ? member.name.includes(filters.name) : true;
     const matchedEngName = filters.engName.toLowerCase()
       ? member.engName.toLowerCase().includes(filters.engName)
       : true;
