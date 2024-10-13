@@ -28,7 +28,6 @@
           <label for="english-name">영문이름</label>
           <input id="english-name" type="text" placeholder="영문 이름을 입력하세요" />
         </div>
-
         <!-- form 깃헙 / 성별 / 역할 -->
         <div class="filter__form">
           <label for="github">GitHub</label>
@@ -37,18 +36,19 @@
         <div class="filter__form">
           <label for="gender">성별</label>
           <select name="gender" id="gender" placeholder="성별 선택">
-            <option value="여성">여성</option>
-            <option value="남성">남성</option>
+            <option value="" default>성별</option>
+            <option value="female">여성</option>
+            <option value="male">남성</option>
           </select>
         </div>
         <div class="filter__form">
           <label for="role">역할</label>
           <select name="role" id="role" type="text" placeholder="OB / YB 선택">
+            <option value="" default>OB / YB 선택</option>
             <option value="OB">OB</option>
             <option value="YB">YB</option>
           </select>
         </div>
-
         <!-- form 조 번호-->
         <div class="filter__form">
           <label for="week1">1주차<br />금잔디조</label>
@@ -58,7 +58,6 @@
           <label for="week2">2주차<br />금잔디조</label>
           <input id="week2" type="text" placeholder="2주차 금잔디조를 입력하세요 (1~9)" />
         </div>
-
         <!-- form 버튼 -->
         <div class="filter__form">
           <button class="filter__btn--clear">초기화</button>
@@ -75,7 +74,7 @@
         <table>
           <thead>
             <tr>
-              <th scope="col"><input type="checkbox" name="selected" /></th>
+              <th scope="col"><input id="check_all" type="checkbox" name="selected" /></th>
               <th scope="col">이름</th>
               <th scope="col">영문이름</th>
               <th scope="col">GitHub</th>

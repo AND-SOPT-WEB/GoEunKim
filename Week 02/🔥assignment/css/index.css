@@ -95,6 +95,7 @@ select {
   border: none;
   border-radius: 0.7rem;
   font-size: 1rem;
+  cursor: pointer;
 }
 
 .filter__btn--clear,
@@ -156,6 +157,12 @@ td {
   vertical-align: top;
   vertical-align: bottom;
   vertical-align: middle;
+}
+
+td > a {
+  cursor: pointer;
+  color: black;
+  text-decoration: underline;
 }
 
 .data_board__shortans {
