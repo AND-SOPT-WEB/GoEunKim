@@ -3,17 +3,17 @@ import render from './modules/render.js';
 import filterData from './modules/filter.js';
 import deleteSelected from './modules/delete.js';
 import selectAll from './modules/selectAll.js';
+import addData from './modules/addData.js';
 
 const tableBody = document.querySelector('tbody'); // 테이블 내용 부분
 const searchBtn = document.querySelector('.filter__btn--search'); // 필터링 검색 버튼
 const clearBtn = document.querySelector('.filter__btn--clear'); // 필터링 초기화 버튼
 const deleteBtn = document.querySelector('.data_board--delete'); // 삭제 버튼
 const checkAllBtn = document.querySelector('#check_all'); //체크 박스 전체 선택
-const openModalBtn = document.querySelector('.data_board--add'); // 데이터 추가 버튼
-const modal = document.querySelector('#dialog');
-const closeModalBtn = document.querySelector('#closeDialogBtn');
-const addDataBtn = document.querySelector('#addDataBtn');
-
+const openModalBtn = document.querySelector('.data_board--add'); // 모달 열기 버튼
+const modal = document.querySelector('#dialog'); // 모달
+const closeModalBtn = document.querySelector('#closeDialogBtn'); // 모달 닫기 버튼
+const addDataBtn = document.querySelector('#addDataBtn'); // 데이터 추가 버튼
 // 초기 로컬 스토리지 세팅
 if (!localStorage.getItem('membersData')) {
   localStorage.setItem('membersData', JSON.stringify(members));
@@ -75,21 +75,8 @@ modal.addEventListener('click', (e) => {
 
 //데이터 추가 버튼 이벤트리스너
 addDataBtn.addEventListener('click', () => {
-  const newData = {
-    id: datas.length + 1,
-    name: document.getElementById('dialog_name').value,
-    englishName: document.getElementById('dialog_english-name').value,
-    github: document.getElementById('dialog_github').value,
-    gender: document.getElementById('dialog_gender').value,
-    role: document.getElementById('dialog_role').value,
-    firstWeekGroup: document.getElementById('dialog_week1').value,
-    secondWeekGroup: document.getElementById('dialog_week2').value,
-  };
-
-  // 기존 데이터 배열에 새로운 데이터 추가
+  const newData = addData(datas);
   datas.push(newData);
-
-  // 테이블 다시 렌더링 (모달 데이터 추가 후)
   render(false, tableBody, datas);
   clear();
   modal.close();

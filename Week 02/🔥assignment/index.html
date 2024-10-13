@@ -107,7 +107,7 @@
           <div class="input_field">
             <label for="gender">성별</label>
             <select name="gender" id="dialog_gender" placeholder="성별 선택">
-              <option value="" default>성별</option>
+              <option disabled>성별</option>
               <option value="female">여성</option>
               <option value="male">남성</option>
             </select>
@@ -115,7 +115,7 @@
           <div class="input_field">
             <label for="role">역할</label>
             <select name="role" id="dialog_role" type="text" placeholder="OB / YB 선택">
-              <option value="" default>OB / YB 선택</option>
+              <option disabled>OB / YB 선택</option>
               <option value="OB">OB</option>
               <option value="YB">YB</option>
             </select>
@@ -133,5 +133,6 @@
       </form>
     </dialog>
     <script type="module" src="./js/index.js"></script>
+    <script type="module" src="./js/modules/addData.js"></script>
   </body>
 </html>
