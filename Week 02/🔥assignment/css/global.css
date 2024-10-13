@@ -1,0 +1,12 @@
+:root {
+  /* color */
+  --backGround: #e6edff;
+  --backGroundSub: #a0c0ff;
+  --mainColor: #8d95cf;
+  --mainColor2: #002266;
+  --labelColor: aliceblue;
+
+  /* text color */
+  --textmain: #e6edff;
+  --textGrey: #3c3c3c;
+}

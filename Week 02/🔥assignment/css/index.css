@@ -1,0 +1,104 @@
+@import './global.css';
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--backGround);
+  color: var(--textmain);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 8vh;
+  background-color: var(--backGroundSub);
+  padding: 0 5rem;
+}
+
+header h1 {
+  font-weight: 800;
+  font-size: 2rem;
+}
+
+header > span > i {
+  font-size: 1.5rem;
+}
+
+main {
+  width: 60vw;
+  margin: 3% 20%;
+}
+
+.filter {
+  width: 100%;
+  background-color: var(--backGroundSub);
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0.5rem;
+  padding: 2.5rem;
+}
+
+.filter__form:nth-child(1),
+.filter__form:nth-child(2) {
+  grid-column: 1 / 7;
+}
+
+.filter__form:nth-child(3),
+.filter__form:nth-child(4),
+.filter__form:nth-child(5) {
+  grid-column: span 2;
+}
+
+.filter__form:nth-child(6),
+.filter__form:nth-child(7) {
+  grid-column: span 3;
+}
+
+.filter__form:nth-child(8),
+.filter__form:nth-child(9) {
+  grid-column: span 3;
+}
+
+.filter__form {
+  display: flex;
+}
+
+label {
+  width: 4.8rem;
+  height: 3.8rem;
+  background-color: var(--labelColor);
+  color: var(--textGrey);
+  font-size: 1rem;
+  padding: 0 1rem;
+  text-align: center;
+  align-content: center;
+  font-weight: 700;
+}
+
+input,
+select {
+  border: none;
+  width: 90%;
+  padding: 10px;
+
+  font-size: 16px;
+}
+
+.filter__btn--clear,
+.filter__btn--search {
+  color: var(--textmain);
+  border: none;
+  border-radius: 0.7rem;
+  width: 100%;
+  padding: 1rem 5rem;
+  margin-top: 1rem;
+}
+
+.filter__btn--clear {
+  background-color: var(--mainColor);
+}
+
+.filter__btn--search {
+  background-color: var(--mainColor2);
+}
