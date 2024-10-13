@@ -11,7 +11,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 8vh;
+  height: 10vh;
   background-color: var(--backGroundSub);
   padding: 0 5rem;
 }
@@ -86,19 +86,78 @@ select {
 }
 
 .filter__btn--clear,
-.filter__btn--search {
+.filter__btn--search,
+.data_board--delete,
+.data_board--add {
+  width: 100%;
+  margin-top: 1rem;
   color: var(--textmain);
   border: none;
   border-radius: 0.7rem;
-  width: 100%;
-  padding: 1rem 5rem;
-  margin-top: 1rem;
+  font-size: 1rem;
 }
 
-.filter__btn--clear {
+.filter__btn--clear,
+.filter__btn--search {
+  padding: 1rem 5rem;
+}
+
+.filter__btn--clear,
+.data_board--delete {
   background-color: var(--mainColor);
 }
 
-.filter__btn--search {
+.filter__btn--search,
+.data_board--add {
   background-color: var(--mainColor2);
+}
+
+.data_board {
+  margin-top: 2rem;
+  color: black;
+  width: 108%; /* 뭐지 ??? */
+  height: auto;
+}
+
+.data_board > table {
+  width: 100%;
+}
+
+.data_board__btns {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+.data_board--delete,
+.data_board--add {
+  width: 15%;
+  padding: 0.9rem 2rem;
+  margin-bottom: 0.5rem;
+}
+
+thead {
+  color: var(--textmain);
+  font-weight: 800;
+  background-color: var(--mainColor);
+}
+
+tbody {
+  background-color: var(--tableColor);
+}
+
+th,
+td {
+  width: 100px;
+  height: 50px;
+  text-align: center;
+  border: 1px solid var(--backGroundSub);
+
+  vertical-align: top;
+  vertical-align: bottom;
+  vertical-align: middle;
+}
+
+.data_board__shortans {
+  width: 7%;
 }
