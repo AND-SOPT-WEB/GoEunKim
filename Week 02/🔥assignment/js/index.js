@@ -1,6 +1,6 @@
 import members from '../data/members.js';
 import render from './modules/render.js';
-import filterData from './modules/filter.js';
+import { filterData, clear } from './modules/filter.js';
 import deleteSelected from './modules/delete.js';
 import selectAll from './modules/selectAll.js';
 import addData from './modules/addData.js';
@@ -21,17 +21,6 @@ if (!localStorage.getItem('membersData')) {
 
 // 로컬 스토리지에서 데이터 받아오기
 let datas = JSON.parse(localStorage.getItem('membersData'));
-
-// 필터 초기화 함수
-const clear = () => {
-  document.getElementById('name').value = '';
-  document.getElementById('english-name').value = '';
-  document.getElementById('github').value = '';
-  document.getElementById('gender').value = '';
-  document.getElementById('role').value = '';
-  document.getElementById('week1').value = '';
-  document.getElementById('week2').value = '';
-};
 
 // 필터 처리 함수
 const filtering = () => {

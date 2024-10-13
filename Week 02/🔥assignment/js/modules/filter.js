@@ -18,4 +18,15 @@ const filterData = (datas, filters) => {
   });
 };
 
-export default filterData;
+// 필터 초기화 함수
+const clear = () => {
+  document.getElementById('name').value = '';
+  document.getElementById('english-name').value = '';
+  document.getElementById('github').value = '';
+  document.getElementById('gender').value = '';
+  document.getElementById('role').value = '';
+  document.getElementById('week1').value = '';
+  document.getElementById('week2').value = '';
+};
+
+export { filterData, clear };
