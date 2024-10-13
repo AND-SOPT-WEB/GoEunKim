@@ -88,6 +88,50 @@
         </table>
       </section>
     </main>
+    <dialog id="dialog">
+      <form method="dialog">
+        <button type="button" id="closeDialogBtn">X</button>
+        <div class="input_field">
+          <label for="name">이름</label>
+          <input id="dialog_name" type="text" placeholder="이름을 입력하세요" />
+        </div>
+        <div class="input_field">
+          <label for="english-name">영문이름</label>
+          <input id="dialog_english-name" type="text" placeholder="영문 이름을 입력하세요" />
+        </div>
+        <div class="input_field">
+          <label for="github">GitHub</label>
+          <input id="dialog_github" type="text" placeholder="GitHub 아이디" />
+        </div>
+        <div class="selects">
+          <div class="input_field">
+            <label for="gender">성별</label>
+            <select name="gender" id="dialog_gender" placeholder="성별 선택">
+              <option value="" default>성별</option>
+              <option value="female">여성</option>
+              <option value="male">남성</option>
+            </select>
+          </div>
+          <div class="input_field">
+            <label for="role">역할</label>
+            <select name="role" id="dialog_role" type="text" placeholder="OB / YB 선택">
+              <option value="" default>OB / YB 선택</option>
+              <option value="OB">OB</option>
+              <option value="YB">YB</option>
+            </select>
+          </div>
+        </div>
+        <div class="input_field">
+          <label for="week1">1주차 금잔디조</label>
+          <input id="dialog_week1" type="text" placeholder="1주차 금잔디조를 입력하세요 (1~9)" />
+        </div>
+        <div class="input_field">
+          <label for="week2">2주차 금잔디조</label>
+          <input id="dialog_week2" type="text" placeholder="2주차 금잔디조를 입력하세요 (1~9)" />
+        </div>
+        <button id="addDataBtn">추가하기</button>
+      </form>
+    </dialog>
     <script type="module" src="./js/index.js"></script>
   </body>
 </html>

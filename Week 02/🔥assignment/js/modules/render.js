@@ -1,6 +1,8 @@
-const render = (tableBody, datas) => {
+const render = (isModalData = false, tableBody, datas) => {
   tableBody.innerHTML = '';
+
   datas.forEach((data) => {
+    console.log(data);
     const { id, name, englishName, github, gender, role, firstWeekGroup, secondWeekGroup } = data;
     const tr = document.createElement('tr');
     tr.innerHTML = `
@@ -13,7 +15,11 @@ const render = (tableBody, datas) => {
         <td>${firstWeekGroup}</td>
         <td>${secondWeekGroup}</td>
     `;
-    tableBody.appendChild(tr);
+    if (isModalData) {
+      tableBody.appendChild(tr);
+    } else {
+      tableBody.appendChild(tr);
+    }
   });
 };
 
