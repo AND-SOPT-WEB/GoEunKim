@@ -7,6 +7,7 @@ body {
   color: var(--textmain);
 }
 
+/* 헤더  */
 header {
   display: flex;
   justify-content: space-between;
@@ -25,6 +26,7 @@ header > span > i {
   font-size: 1.5rem;
 }
 
+/* 필터 */
 main {
   width: 60vw;
   margin: 3% 20%;
@@ -85,6 +87,11 @@ main {
 }
 
 .filter__btn--clear,
+.filter__btn--search {
+  padding: 1rem 5rem;
+}
+
+.filter__btn--clear,
 .filter__btn--search,
 .data_board--delete,
 .data_board--add,
@@ -99,11 +106,6 @@ dialog button:last-child {
 }
 
 .filter__btn--clear,
-.filter__btn--search {
-  padding: 1rem 5rem;
-}
-
-.filter__btn--clear,
 .data_board--delete {
   background-color: var(--mainColor);
 }
@@ -114,10 +116,11 @@ dialog button:last-child {
   background-color: var(--mainColor2);
 }
 
+/* 데이터 표 */
 .data_board {
   margin-top: 2rem;
   color: black;
-  width: 108%; /* 뭐지 ??? */
+  width: 108%;
   height: auto;
 }
 
@@ -134,7 +137,7 @@ dialog button:last-child {
 .data_board--delete,
 .data_board--add {
   width: 15%;
-  padding: 0.9rem 2rem;
+  padding: var(--smbtnPadding);
   margin-bottom: 0.5rem;
 }
 
@@ -170,6 +173,7 @@ td > a {
   width: 7%;
 }
 
+/* 데이터 입력 모달  */
 dialog {
   position: relative;
   border: none;

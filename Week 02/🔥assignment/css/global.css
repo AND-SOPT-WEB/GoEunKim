@@ -11,4 +11,7 @@
   /* text color */
   --textmain: #e6edff;
   --textGrey: #3c3c3c;
+
+  /* btn padding */
+  --smbtnPadding: 0.9rem 2rem;
 }
