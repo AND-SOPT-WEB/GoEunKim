@@ -4,9 +4,11 @@ const filterData = (datas, filters) => {
     // 입력값이 없으면 -> true 처리 (why? 모든 멤버 All 포함 )
     const matchedName = filters.name ? member.name.includes(filters.name) : true;
     const matchedEngName = filters.engName.toLowerCase()
-      ? member.engName.toLowerCase().includes(filters.engName)
+      ? member.englishName.toLowerCase().includes(filters.engName.toLowerCase())
       : true;
-    const matchedGithub = filters.github.toLowerCase() ? member.github.toLowerCase().includes(filters.github) : true;
+    const matchedGithub = filters.github.toLowerCase()
+      ? member.github.toLowerCase().includes(filters.github.toLowerCase())
+      : true;
     const matchedGender = filters.gender ? member.gender === filters.gender : true;
     const matchedRole = filters.role ? member.role === filters.role : true;
     const matchedWeek1 = filters.week1 ? member.firstWeekGroup == filters.week1 : true;
