@@ -14,6 +14,8 @@ const openModalBtn = document.querySelector('.data_board--add'); // 모달 열�
 const modal = document.querySelector('#dialog'); // 모달
 const closeModalBtn = document.querySelector('#closeDialogBtn'); // 모달 닫기 버튼
 const addDataBtn = document.querySelector('#addDataBtn'); // 데이터 추가 버튼
+const rerender = document.querySelector('#header__reload'); // 새로고침 아이콘
+
 // 초기 로컬 스토리지 세팅
 if (!localStorage.getItem('membersData')) {
   localStorage.setItem('membersData', JSON.stringify(members));
@@ -40,6 +42,8 @@ const filtering = () => {
 
 // 초기 랜더링
 render(false, tableBody, members);
+// 새로고침 이벤트리스너
+rerender.addEventListener('click', () => window.location.reload());
 // 필터 검색 버튼 이벤트리스너
 searchBtn.addEventListener('click', filtering);
 // 필터 초기화 버튼 이벤트리스너
