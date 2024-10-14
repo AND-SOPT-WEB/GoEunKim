@@ -74,7 +74,9 @@ modal.addEventListener('click', (e) => {
 addDataBtn.addEventListener('click', (e) => {
   e.preventDefault();
   const newData = addData(datas);
-  datas.push(newData);
-  modal.close();
-  render(false, tableBody, datas);
+  if (newData) {
+    datas.push(newData);
+    modal.close();
+    render(false, tableBody, datas);
+  }
 });
