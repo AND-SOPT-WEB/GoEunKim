@@ -2,7 +2,6 @@ const render = (isModalData = false, tableBody, datas) => {
   tableBody.innerHTML = '';
 
   datas.forEach((data) => {
-    console.log(data);
     const { id, name, englishName, github, gender, role, firstWeekGroup, secondWeekGroup } = data;
     const tr = document.createElement('tr');
     tr.innerHTML = `

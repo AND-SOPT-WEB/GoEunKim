@@ -56,7 +56,6 @@ deleteBtn.addEventListener('click', () => {
   checkAllBtn.checked = false;
 });
 // 전체 선택 체크박스 이벤트리스너
-console.log(checkboxes);
 checkAllBtn.addEventListener('click', (e) => selecteAll(e.target));
 checkboxes.forEach((box) => {
   box.addEventListener('click', checkingTop);
@@ -72,10 +71,10 @@ modal.addEventListener('click', (e) => {
 });
 
 //데이터 추가 버튼 이벤트리스너
-addDataBtn.addEventListener('click', () => {
+addDataBtn.addEventListener('click', (e) => {
+  e.preventDefault();
   const newData = addData(datas);
   datas.push(newData);
-  render(false, tableBody, datas);
-  clear();
   modal.close();
+  render(false, tableBody, datas);
 });
