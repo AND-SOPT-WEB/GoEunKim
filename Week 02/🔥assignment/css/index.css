@@ -120,11 +120,21 @@ dialog button:last-child {
 .data_board--delete {
   background-color: var(--mainColor);
 }
+.filter__btn--clear:hover,
+.data_board--delete:hover {
+  background-color: var(--hovermain);
+}
 
 .filter__btn--search,
 .data_board--add,
 dialog button:last-child {
   background-color: var(--mainColor2);
+}
+
+.filter__btn--search:hover,
+.data_board--add:hover,
+dialog button:last-child:hover {
+  background-color: var(--hovermain2);
 }
 
 /* 데이터 표 */

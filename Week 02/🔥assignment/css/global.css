@@ -8,6 +8,10 @@
   --tableColor: #ffffff;
   --backDropColor: #00000096;
 
+  /* hovercolor */
+  --hovermain: #9da3c9;
+  --hovermain2: #1a3161;
+
   /* text color */
   --textmain: #e6edff;
   --textGrey: #3c3c3c;
