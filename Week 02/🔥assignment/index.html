@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="wave_icon.png" />
     <link rel="stylesheet" href="./css/reset.css" />
     <link rel="stylesheet" href="./css/index.css" />
     <script src="https://kit.fontawesome.com/26acdb4290.js" crossorigin="anonymous"></script>
@@ -16,6 +17,7 @@
       <h3>🌊 앤솝 해피곤 🌊</h3>
     </header>
     <main>
+      <!-- 📍 필터  -->
       <section class="filter">
         <!-- form 이름 -->
         <div class="filter__form">
@@ -36,25 +38,25 @@
           <label for="gender">성별</label>
           <select name="gender" id="gender" placeholder="성별 선택">
             <option value="" selected disabled>성별</option>
-            <option value="female">여성</option>
-            <option value="male">남성</option>
+            <option value="female">여성 🙇🏻‍♀️</option>
+            <option value="male">남성 🙇🏻‍♂️</option>
           </select>
         </div>
         <div class="filter__form">
           <label for="role">역할</label>
           <select name="role" id="role" type="text" placeholder="OB / YB 선택">
             <option value="" selected disabled>OB / YB 선택</option>
-            <option value="OB">OB</option>
-            <option value="YB">YB</option>
+            <option value="OB">OB 🐥</option>
+            <option value="YB">YB 🐣</option>
           </select>
         </div>
         <!-- form 조 번호-->
         <div class="filter__form">
-          <label for="week1">1주차<br />금잔디조</label>
+          <label for="week1">1주차 🌱<br />금잔디조 </label>
           <input id="week1" type="Number" placeholder="1주차 금잔디조를 입력하세요 (1~9)" />
         </div>
         <div class="filter__form">
-          <label for="week2">2주차<br />금잔디조</label>
+          <label for="week2">2주차 🌱<br />금잔디조 </label>
           <input id="week2" type="Number" placeholder="2주차 금잔디조를 입력하세요 (1~9)" />
         </div>
         <!-- form 버튼 -->
@@ -65,6 +67,7 @@
           <button class="filter__btn--search">검색</button>
         </div>
       </section>
+      <!-- 📍 테이블 내용  -->
       <section class="data_board">
         <div class="data_board__btns">
           <button class="data_board--delete">선택삭제</button>
@@ -87,7 +90,9 @@
         </table>
       </section>
     </main>
+    <!-- 📍 입력 모달  -->
     <dialog id="dialog">
+      <h2>✍🏻 새로운 멤버 입력 👀</h2>
       <form method="dialog">
         <button type="button" id="closeDialogBtn">X</button>
         <div class="input_field">
@@ -107,16 +112,16 @@
             <label for="gender">성별</label>
             <select name="gender" id="dialog_gender" placeholder="성별 선택">
               <option value="" selected disabled>성별</option>
-              <option value="female">여성</option>
-              <option value="male">남성</option>
+              <option value="female">여성 🙇🏻‍♀️</option>
+              <option value="male">남성 🙇🏻‍♂️</option>
             </select>
           </div>
           <div class="input_field">
             <label for="role">역할</label>
             <select name="role" id="dialog_role" type="text" placeholder="OB / YB 선택">
               <option value="" selected disabled>OB / YB 선택</option>
-              <option value="OB">OB</option>
-              <option value="YB">YB</option>
+              <option value="OB">OB 🐥</option>
+              <option value="YB">YB 🐣</option>
             </select>
           </div>
         </div>

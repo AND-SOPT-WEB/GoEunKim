@@ -178,11 +178,17 @@ dialog {
   position: relative;
   border: none;
   width: 40%;
-  height: 85%;
+  height: 88%;
 }
 
 dialog::backdrop {
   background-color: var(--backDropColor);
+}
+
+dialog > h2 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 0.4rem 0 0 1.3rem;
 }
 
 .input_field {
