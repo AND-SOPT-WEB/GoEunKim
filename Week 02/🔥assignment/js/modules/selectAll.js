@@ -7,4 +7,19 @@ const selecteAll = (checkAllBtn) => {
   });
 };
 
-export default selecteAll;
+const checkingTop = () => {
+  const checkboxes = document.getElementsByName('selected');
+  const checkAllBtn = document.querySelector('#check_all');
+  const checked = document.querySelectorAll('input[name="selected"]:checked').length;
+  const boxCnt = checkboxes.length;
+
+  console.log(checked, boxCnt);
+
+  if (checked == boxCnt) {
+    checkAllBtn.checked = true;
+  } else {
+    checkAllBtn.checked = false;
+  }
+};
+
+export { selecteAll, checkingTop };

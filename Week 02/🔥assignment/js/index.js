@@ -2,7 +2,7 @@ import members from '../data/members.js';
 import render from './modules/render.js';
 import { filterData, clear } from './modules/filter.js';
 import deleteSelected from './modules/delete.js';
-import selectAll from './modules/selectAll.js';
+import { selecteAll, checkingTop } from './modules/selectAll.js';
 import addData from './modules/addData.js';
 
 const tableBody = document.querySelector('tbody'); // 테이블 내용 부분
@@ -10,6 +10,7 @@ const searchBtn = document.querySelector('.filter__btn--search'); // 필터링 �
 const clearBtn = document.querySelector('.filter__btn--clear'); // 필터링 초기화 버튼
 const deleteBtn = document.querySelector('.data_board--delete'); // 삭제 버튼
 const checkAllBtn = document.querySelector('#check_all'); //체크 박스 전체 선택
+const checkboxes = document.getElementsByName('selected'); // 체크 박스 자손들
 const openModalBtn = document.querySelector('.data_board--add'); // 모달 열기 버튼
 const modal = document.querySelector('#dialog'); // 모달
 const closeModalBtn = document.querySelector('#closeDialogBtn'); // 모달 닫기 버튼
@@ -55,7 +56,11 @@ deleteBtn.addEventListener('click', () => {
   checkAllBtn.checked = false;
 });
 // 전체 선택 체크박스 이벤트리스너
-checkAllBtn.addEventListener('click', (e) => selectAll(e.target));
+console.log(checkboxes);
+checkAllBtn.addEventListener('click', (e) => selecteAll(e.target));
+checkboxes.forEach((box) => {
+  box.addEventListener('click', checkingTop);
+});
 
 // 모달 열기 버튼 이벤트리스너
 openModalBtn.addEventListener('click', (e) => modal.showModal());
