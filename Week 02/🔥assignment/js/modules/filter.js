@@ -27,6 +27,8 @@ const clear = () => {
   document.getElementById('role').value = '';
   document.getElementById('week1').value = '';
   document.getElementById('week2').value = '';
+
+  window.location.reload();
 };
 
 export { filterData, clear };
