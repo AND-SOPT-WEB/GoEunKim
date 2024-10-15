@@ -2,7 +2,7 @@ import members from '../data/members.js';
 import render from './modules/render.js';
 import { filterData, clear } from './modules/filter.js';
 import deleteSelected from './modules/delete.js';
-import { selecteAll, checkingTop } from './modules/selectAll.js';
+import { selecteAll, checkingTop, retrackingcheck } from './modules/selectAll.js';
 import addData from './modules/addData.js';
 
 const tableBody = document.querySelector('tbody'); // 테이블 내용 부분
@@ -54,6 +54,8 @@ deleteBtn.addEventListener('click', () => {
   datas = deleteSelected(datas);
   render(false, tableBody, datas);
   checkAllBtn.checked = false;
+
+  retrackingcheck();
 });
 // 전체 선택 체크박스 이벤트리스너
 checkAllBtn.addEventListener('click', (e) => selecteAll(e.target));
@@ -79,4 +81,5 @@ addDataBtn.addEventListener('click', (e) => {
     modal.close();
     render(false, tableBody, datas);
   }
+  retrackingcheck();
 });

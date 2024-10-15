@@ -22,4 +22,11 @@ const checkingTop = () => {
   }
 };
 
-export { selecteAll, checkingTop };
+const retrackingcheck = () => {
+  const checkboxes = document.getElementsByName('selected');
+  checkboxes.forEach((box) => {
+    box.addEventListener('click', checkingTop);
+  });
+};
+
+export { selecteAll, checkingTop, retrackingcheck };
