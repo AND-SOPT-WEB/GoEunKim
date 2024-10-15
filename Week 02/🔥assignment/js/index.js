@@ -80,6 +80,7 @@ addDataBtn.addEventListener('click', (e) => {
     datas.push(newData);
     modal.close();
     render(false, tableBody, datas);
+    checkAllBtn.checked = false;
   }
   retrackingcheck();
 });
