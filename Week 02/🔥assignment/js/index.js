@@ -42,7 +42,7 @@ const filtering = () => {
 };
 
 // 초기 랜더링
-render(false, tableBody, members);
+render(false, tableBody, datas);
 // 새로고침 이벤트리스너
 rerender.addEventListener('click', () => window.location.reload());
 // 필터 검색 버튼 이벤트리스너
@@ -52,6 +52,7 @@ clearBtn.addEventListener('click', clear);
 // 삭제 버튼 이벤트리스너
 deleteBtn.addEventListener('click', () => {
   datas = deleteSelected(datas);
+  localStorage.setItem('membersData', JSON.stringify(datas));
   render(false, tableBody, datas);
   checkAllBtn.checked = false;
 
@@ -78,6 +79,7 @@ addDataBtn.addEventListener('click', (e) => {
   const newData = addData(datas);
   if (newData) {
     datas.push(newData);
+    localStorage.setItem('membersData', JSON.stringify(datas));
     modal.close();
     render(false, tableBody, datas);
     checkAllBtn.checked = false;
