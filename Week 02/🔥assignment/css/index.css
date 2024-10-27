@@ -39,8 +39,8 @@ header > span > i {
 
 /* 필터 */
 main {
-  width: 60vw;
-  margin: 3% 20%;
+  width: 60%;
+  margin: 5% 20%;
 }
 
 .filter {
@@ -94,7 +94,7 @@ main {
   border: none;
   width: 90%;
   padding: 10px;
-  font-size: 16px;
+  font-size: 1rem;
 }
 
 .filter__btn--clear,
@@ -189,6 +189,9 @@ td > a {
   color: black;
   text-decoration: underline;
 }
+tbody > tr:hover {
+  background-color: var(--hovertable);
+}
 
 .data_board__shortans {
   width: 7%;
@@ -199,7 +202,7 @@ dialog {
   position: relative;
   border: none;
   width: 40%;
-  height: 88%;
+  height: 90%;
 }
 
 dialog::backdrop {
@@ -212,9 +215,13 @@ dialog > h2 {
   margin: 0.4rem 0 0 1.3rem;
 }
 
+dialog > form {
+  margin: 2.5rem 0;
+}
+
 .input_field {
   width: 80%;
-  margin: 2rem 10% 0 10%;
+  margin: 2.5% 10% 0 10%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -225,14 +232,14 @@ dialog > h2 {
 }
 
 .input_field label {
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 .input_field input {
   border: 0.5px solid var(--textGrey);
 
   padding: 1rem;
-  font-size: 16px;
+  font-size: 1rem;
 }
 
 .input_field select {
