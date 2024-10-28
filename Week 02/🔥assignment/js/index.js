@@ -46,7 +46,12 @@ render(false, tableBody, datas);
 // 새로고침 이벤트리스너
 rerender.addEventListener('click', () => window.location.reload());
 // 필터 검색 버튼 이벤트리스너
-searchBtn.addEventListener('click', filtering);
+searchBtn.addEventListener('click', () => {
+  filtering();
+  checkAllBtn.checked = false;
+
+  retrackingcheck();
+});
 // 필터 초기화 버튼 이벤트리스너
 clearBtn.addEventListener('click', clear);
 // 삭제 버튼 이벤트리스너
