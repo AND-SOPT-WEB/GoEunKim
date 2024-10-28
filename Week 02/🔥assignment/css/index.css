@@ -178,9 +178,6 @@ td {
   height: 50px;
   text-align: center;
   border: 1px solid var(--backGroundSub);
-
-  vertical-align: top;
-  vertical-align: bottom;
   vertical-align: middle;
 }
 
