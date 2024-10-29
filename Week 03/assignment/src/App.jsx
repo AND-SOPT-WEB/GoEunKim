@@ -6,14 +6,13 @@ import Game from './components/Game';
 
 function App() {
   const [isGameMode, setIsGameMode] = useState(true); // 게임 || 랭킹 랜더링을 위한 상태변수
-  const [isRunning, setIsRunning] = useState(false);
   const [time, setTime] = useState(0);
   const [level, setLevel] = useState(1);
 
   return (
     <>
-      <Header isGameMode={isGameMode} setIsGameMode={setIsGameMode} setLevel={setLevel} />
-      {isGameMode ? <Game level={level} /> : <Ranking />}
+      <Header time={time} isGameMode={isGameMode} setIsGameMode={setIsGameMode} setLevel={setLevel} />
+      {isGameMode ? <Game time={time} setTime={setTime} level={level} /> : <Ranking />}
     </>
   );
 }

@@ -1,13 +1,14 @@
 import styled from '@emotion/styled';
 import { useState, useEffect, useMemo } from 'react';
 
-const Game = ({ level }) => {
+const Game = ({ level, setTime, time }) => {
   const gridSize = parseInt(level) + 2;
   const perGameSize = gridSize * gridSize;
   const maxNumber = perGameSize * 2;
 
   const [cards, setCards] = useState([]);
   const [nextNumber, setNextNumber] = useState(1);
+  const [isRunning, setIsRunning] = useState(false);
 
   const shuffledCards = () => {
     const NumsArr = new Set();
@@ -38,6 +39,10 @@ const Game = ({ level }) => {
   const handleCardClick = (index) => {
     const clickedCard = cards[index];
 
+    if (!isRunning) {
+      setIsRunning(true);
+    }
+
     if (clickedCard[0].num === nextNumber) {
       setCards((prevCards) => {
         const newCards = [...prevCards];
@@ -53,11 +58,28 @@ const Game = ({ level }) => {
       });
       setNextNumber((prev) => prev + 1);
     }
+
+    if (nextNumber + 1 > maxNumber) {
+      setIsRunning(false);
+      setTime(time);
+    }
   };
 
   useEffect(() => {
     shuffledCards();
   }, [level]);
+
+  useEffect(() => {
+    let interval = null;
+    if (isRunning) {
+      interval = setInterval(() => {
+        setTime((prevTime) => prevTime + 0.01);
+      }, 10);
+    } else if (!isRunning && time !== 0) {
+      clearInterval(interval);
+    }
+    return () => clearInterval(interval);
+  }, [isRunning, setTime, time]);
 
   return (
     <Wrapper>

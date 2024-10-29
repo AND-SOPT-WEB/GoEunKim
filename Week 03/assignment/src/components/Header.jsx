@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import Select from './atoms/Select';
 
-const Header = ({ isGameMode, setIsGameMode, setLevel }) => {
+const Header = ({ isGameMode, setIsGameMode, setLevel, time }) => {
   return (
     <Wrapper>
       <section>
@@ -17,7 +17,7 @@ const Header = ({ isGameMode, setIsGameMode, setLevel }) => {
       </section>
       {isGameMode && (
         <section>
-          <Select setLevel={setLevel} />
+          <Select setLevel={setLevel} time={time} />
         </section>
       )}
     </Wrapper>
