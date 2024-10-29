@@ -3,42 +3,73 @@ import { useState, useEffect, useMemo } from 'react';
 
 const Game = ({ level }) => {
   const gridSize = parseInt(level) + 2;
-  const numbersPerPage = gridSize * gridSize;
-  const maxNumber = numbersPerPage * 2;
+  const perGameSize = gridSize * gridSize;
+  const maxNumber = perGameSize * 2;
 
   const [cards, setCards] = useState([]);
   const [nextNumber, setNextNumber] = useState(1);
 
   const shuffledCards = () => {
     const NumsArr = new Set();
-    while (NumsArr.size < numbersPerPage) {
-      NumsArr.add(Math.floor(Math.random() * numbersPerPage));
-    }
-    // 두 번째 범위 (numbersPerPage + 1 ~ maxNumber)
+
     while (NumsArr.size < maxNumber) {
-      NumsArr.add(Math.floor(Math.random() * numbersPerPage) + numbersPerPage);
+      if (NumsArr.size % 2 === 0) {
+        NumsArr.add(Math.floor(Math.random() * perGameSize) + 1);
+      } else {
+        NumsArr.add(Math.floor(Math.random() * perGameSize) + perGameSize + 1);
+      }
     }
-    console.log(NumsArr);
-    // const Nums = Array.from(NumsArr).slice(0, maxNumber);
-    // let tempArr = [];
-    // for (let i = 0; i < maxNumber; i += 2) {
-    //   tempArr.push({ num: Nums[i], isClicked: false }, { num: Nums[i + 1], isClicked: false });
-    // }
+
+    const Nums = Array.from(NumsArr);
+    let tempArr = [];
+    console.log(Nums);
+    for (let i = 0; i < maxNumber; i += 2) {
+      if (Nums[i + 1] !== undefined) {
+        tempArr.push([
+          { num: Nums[i], isClicked: false },
+          { num: Nums[i + 1], isClicked: false },
+        ]);
+      }
+    }
+    console.log(tempArr);
+    setCards(tempArr);
+  };
+
+  const handleCardClick = (index) => {
+    const clickedCard = cards[index];
+
+    if (clickedCard[0].num === nextNumber) {
+      setCards((prevCards) => {
+        const newCards = [...prevCards];
+        newCards[index][0].isClicked = true;
+        return newCards;
+      });
+      setNextNumber((prev) => prev + 1);
+    } else if (clickedCard[1].num === nextNumber) {
+      setCards((prevCards) => {
+        const newCards = [...prevCards];
+        newCards[index][1].isClicked = true;
+        return newCards;
+      });
+      setNextNumber((prev) => prev + 1);
+    }
   };
 
   useEffect(() => {
     shuffledCards();
-  }, []);
+  }, [level]);
 
   return (
     <Wrapper>
       <h1>다음 숫자 : 1</h1>
       <Grid columns={gridSize}>
-        {cards.map((card, index) => (
-          <Cell key={`card-${index}`} isClicked={card[0].isClicked}>
-            {card[0].num}
-          </Cell>
-        ))}
+        {cards.map((card, index) =>
+          card[1].isClicked ? null : (
+            <Cell key={`card-${index}`} isClicked={card[0].isClicked} onClick={() => handleCardClick(index)}>
+              {card[0].isClicked ? card[1].num : card[0].num}
+            </Cell>
+          )
+        )}
       </Grid>
     </Wrapper>
   );
