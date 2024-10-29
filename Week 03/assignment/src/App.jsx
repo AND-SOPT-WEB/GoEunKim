@@ -2,6 +2,7 @@ import './App.css';
 import Header from './components/Header';
 import { useState, useRef } from 'react';
 import Ranking from './components/Ranking';
+import Game from './components/Game';
 
 function App() {
   const [isGameMode, setIsGameMode] = useState(true); // 게임 || 랭킹 랜더링을 위한 상태변수
@@ -12,7 +13,7 @@ function App() {
   return (
     <>
       <Header isGameMode={isGameMode} setIsGameMode={setIsGameMode} setLevel={setLevel} />
-      {isGameMode ? <></> : <Ranking />}
+      {isGameMode ? <Game level={level} /> : <Ranking />}
     </>
   );
 }
