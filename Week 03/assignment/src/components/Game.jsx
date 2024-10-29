@@ -2,16 +2,16 @@ import styled from '@emotion/styled';
 import { useState, useEffect, useMemo } from 'react';
 
 const Game = ({ level, setTime, time }) => {
-  const gridSize = parseInt(level) + 2;
-  const perGameSize = gridSize * gridSize;
-  const maxNumber = perGameSize * 2;
+  const gridSize = parseInt(level) + 2; // col 수
+  const perGameSize = gridSize * gridSize; // round 1 까지의 숫자
+  const maxNumber = perGameSize * 2; // round 2 까지의 숫자
 
-  const [cards, setCards] = useState([]);
-  const [nextNumber, setNextNumber] = useState(1);
-  const [isRunning, setIsRunning] = useState(false);
+  const [cards, setCards] = useState([]); // 카드 담을 배열
+  const [nextNumber, setNextNumber] = useState(1); // 다음 카드
+  const [isRunning, setIsRunning] = useState(false); // 타이머 실행 여부
 
   const shuffledCards = () => {
-    const NumsArr = new Set();
+    const NumsArr = new Set(); // 중복 x
 
     while (NumsArr.size < maxNumber) {
       if (NumsArr.size % 2 === 0) {
@@ -62,6 +62,7 @@ const Game = ({ level, setTime, time }) => {
     if (nextNumber + 1 > maxNumber) {
       setIsRunning(false);
       setTime(time);
+      alert(`LEVEL: ${level} / TIME:${time.toFixed(2)}`);
     }
   };
 
@@ -83,7 +84,9 @@ const Game = ({ level, setTime, time }) => {
 
   return (
     <Wrapper>
-      <h1>다음 숫자 : 1</h1>
+      <h1>
+        다음 숫자 <span>{` " ${nextNumber} " `}</span>
+      </h1>
       <Grid columns={gridSize}>
         {cards.map((card, index) =>
           card[1].isClicked ? null : (
@@ -106,6 +109,16 @@ const Wrapper = styled.section`
   width: 60%;
   margin: 5% 20%;
   padding: 2% 0;
+
+  & > h1 {
+    font-size: 1.3rem;
+    font-weight: 600;
+  }
+  & > h1 > span {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: ${({ theme }) => theme.colors.midBlue};
+  }
 `;
 
 const Grid = styled.section`
