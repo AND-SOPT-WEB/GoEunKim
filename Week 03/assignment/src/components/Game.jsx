@@ -1,5 +1,7 @@
 import styled from '@emotion/styled';
 import { useState, useEffect, useMemo } from 'react';
+import Modal from './atoms/Modal';
+import getData from '../utils/getDate';
 
 const Game = ({ level, setTime, time }) => {
   const gridSize = parseInt(level) + 2; // col 수
@@ -9,6 +11,8 @@ const Game = ({ level, setTime, time }) => {
   const [cards, setCards] = useState([]); // 카드 담을 배열
   const [nextNumber, setNextNumber] = useState(1); // 다음 카드
   const [isRunning, setIsRunning] = useState(false); // 타이머 실행 여부
+  const [gameEnd, setGameEnd] = useState(false);
+  const [date, setdate] = useState('');
 
   const shuffledCards = () => {
     const NumsArr = new Set(); // 중복 x
@@ -62,7 +66,10 @@ const Game = ({ level, setTime, time }) => {
     if (nextNumber + 1 > maxNumber) {
       setIsRunning(false);
       setTime(time);
-      alert(`LEVEL: ${level} / TIME:${time.toFixed(2)}`);
+      setGameEnd(true);
+      const date = getData();
+      setdate(date);
+      alert(`Time: ${date} LEVEL: ${level} / TIME:${time.toFixed(2)}`);
     }
   };
 
@@ -96,6 +103,7 @@ const Game = ({ level, setTime, time }) => {
           )
         )}
       </Grid>
+      {gameEnd && <Modal date={date} level={level} time={time} />}
     </Wrapper>
   );
 };
