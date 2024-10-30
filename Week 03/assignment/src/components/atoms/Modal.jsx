@@ -3,8 +3,9 @@ import styled from '@emotion/styled';
 import { keyframes } from '@emotion/react';
 import logo from '../../assets/logo.svg';
 
-const Modal = ({ date, level, time }) => {
+const Modal = ({ date, level, time, closeModal }) => {
   const formattedTime = time.toFixed(2);
+
   return ReactDOM.createPortal(
     <Wrapper>
       <ModalContent>
@@ -14,11 +15,12 @@ const Modal = ({ date, level, time }) => {
           <Logo src={logo} />
         </Logos>
         <h1>😳 오호 좀 하시는데요 ~~ 🏆</h1>
-        <div>
+        <Info>
           <p>{date}</p>
-          <p>{`Level 🎰 : ${level}`}</p>
-          <p>{`TIME ⏰: ${formattedTime}`}</p>
-        </div>
+          <p>{`🎰 Level  : ${level}`}</p>
+          <p>{`⏰ TIME : ${formattedTime}`}</p>
+        </Info>
+        <CloseButton onClick={closeModal}> 다시 해볼래요 ☝🏻 </CloseButton>
       </ModalContent>
     </Wrapper>,
     document.getElementById('root')
@@ -50,7 +52,7 @@ const ModalContent = styled.div`
   background-color: white;
   text-align: center;
 
-  gap: 4rem;
+  gap: 2.3rem;
   width: 40%;
   height: 60%;
 
@@ -61,6 +63,16 @@ const ModalContent = styled.div`
 
   & p {
   fon
+  }
+`;
+
+const Info = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  & p {
+    font-size: 1.1rem;
   }
 `;
 
@@ -84,13 +96,29 @@ const Logos = styled.div`
   font-size: 1.5rem;
 `;
 
+// :nth-child() 보다 :nth-of-type() 이게 더 안전하다고 함
 const Logo = styled.img`
   width: 50px;
   animation: ${bounce} 1.5s infinite;
-  &:nth-child(2) {
+  &:nth-of-type(2) {
     animation-delay: 0.3s;
   }
-  &:nth-child(3) {
+  &:nth-of-type(3) {
     animation-delay: 0.6s;
+  }
+`;
+
+const CloseButton = styled.button`
+  background-color: ${({ theme }) => theme.colors.midBlue};
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 1rem;
+
+  &:hover {
+    background-color: ${({ theme }) => theme.colors.darkBlue};
   }
 `;

@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 
-const Table = () => {
+const Table = ({ records }) => {
+  console.log(records);
   return (
     <Container>
       <thead>
@@ -11,16 +12,14 @@ const Table = () => {
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td scope="col">5월 1일 12:00</td>
-          <td scope="col">Level 1</td>
-          <td scope="col">5: 20</td>
-        </tr>
-        <tr>
-          <td scope="col">5월 1일 12:00</td>
-          <td scope="col">Level 1</td>
-          <td scope="col">5: 20</td>
-        </tr>
+        {records &&
+          records.map((e, idx) => (
+            <tr key={idx}>
+              <td scope="col">{e.date}</td>
+              <td scope="col">{`Level ${e.level}`}</td>
+              <td scope="col">{e.time}</td>
+            </tr>
+          ))}
       </tbody>
     </Container>
   );
@@ -38,9 +37,11 @@ const Container = styled.table`
   }
 
   & tr,
-  & td {
+  & td,
+  & th {
     text-align: center;
     border: 1px solid ${({ theme }) => theme.colors.lightBlue};
     vertical-align: middle;
+    height: 2rem;
   }
 `;

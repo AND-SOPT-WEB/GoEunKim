@@ -1,14 +1,28 @@
 import styled from '@emotion/styled';
 import Table from './atoms/Table';
+import getStorage from '../utils/getStorage';
+import deleteStorage from '../utils/deleteStorage';
+import { useEffect, useState } from 'react';
 
 const Ranking = () => {
+  const [records, setRecords] = useState([]);
+
+  const deleteHandler = () => {
+    deleteStorage();
+    setRecords([]);
+  };
+
+  useEffect(() => {
+    setRecords(getStorage || []);
+  }, []);
+
   return (
     <Wrapper>
       <header>
         <h1>랭킹 🏆</h1>
-        <button>초기화 🤪</button>
+        <button onClick={deleteHandler}>초기화 🤪</button>
       </header>
-      <Table />
+      <Table records={records} />
     </Wrapper>
   );
 };

@@ -2,8 +2,9 @@ import styled from '@emotion/styled';
 import { useState, useEffect, useMemo } from 'react';
 import Modal from './atoms/Modal';
 import getData from '../utils/getDate';
+import saveStorage from '../utils/saveStorage';
 
-const Game = ({ level, setTime, time }) => {
+const Game = ({ level, setTime, time, setRecord }) => {
   const gridSize = parseInt(level) + 2; // col 수
   const perGameSize = gridSize * gridSize; // round 1 까지의 숫자
   const maxNumber = perGameSize * 2; // round 2 까지의 숫자
@@ -13,6 +14,13 @@ const Game = ({ level, setTime, time }) => {
   const [isRunning, setIsRunning] = useState(false); // 타이머 실행 여부
   const [gameEnd, setGameEnd] = useState(false);
   const [date, setdate] = useState('');
+
+  const closeModal = () => {
+    setGameEnd(false);
+    setTime(0);
+    setNextNumber(1);
+    shuffledCards();
+  };
 
   const shuffledCards = () => {
     const NumsArr = new Set(); // 중복 x
@@ -69,7 +77,7 @@ const Game = ({ level, setTime, time }) => {
       setGameEnd(true);
       const date = getData();
       setdate(date);
-      alert(`Time: ${date} LEVEL: ${level} / TIME:${time.toFixed(2)}`);
+      saveStorage(date, time, level);
     }
   };
 
@@ -103,7 +111,7 @@ const Game = ({ level, setTime, time }) => {
           )
         )}
       </Grid>
-      {gameEnd && <Modal date={date} level={level} time={time} />}
+      {gameEnd && <Modal date={date} level={level} time={time} closeModal={closeModal} />}
     </Wrapper>
   );
 };
