@@ -57,5 +57,6 @@ const Btns = styled.menu`
     border-radios: 1rem;
     padding: 0.5rem 1rem;
     color: white;
+    font-size: 1.2rem;
   }
 `;

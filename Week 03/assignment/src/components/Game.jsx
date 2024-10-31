@@ -104,7 +104,9 @@ const Game = ({ level, setTime, time, setRecord }) => {
       </h1>
       <Grid columns={gridSize}>
         {cards.map((card, index) =>
-          card[1].isClicked ? null : (
+          card[1].isClicked ? (
+            <Blank key={`blank-${index}`} />
+          ) : (
             <Cell key={`card-${index}`} isClicked={card[0].isClicked} onClick={() => handleCardClick(index)}>
               {card[0].isClicked ? card[1].num : card[0].num}
             </Cell>
@@ -153,4 +155,9 @@ const Cell = styled.div`
   border: 1px solid black;
   color: white;
   background-color: ${({ isClicked, theme }) => (isClicked ? theme.colors.darkBlue : theme.colors.midBlue)};
+`;
+
+const Blank = styled.div`
+  width: 100px;
+  height: 100px;
 `;
