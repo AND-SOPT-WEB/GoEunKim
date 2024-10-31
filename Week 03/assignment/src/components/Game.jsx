@@ -1,10 +1,10 @@
 import styled from '@emotion/styled';
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect } from 'react';
 import Modal from './atoms/Modal';
-import getData from '../utils/getDate';
+import getDate from '../utils/getDate';
 import saveStorage from '../utils/saveStorage';
 
-const Game = ({ level, setTime, time, setRecord }) => {
+const Game = ({ level, setTime, time }) => {
   const gridSize = parseInt(level) + 2; // col 수
   const perGameSize = gridSize * gridSize; // round 1 까지의 숫자
   const maxNumber = perGameSize * 2; // round 2 까지의 숫자
@@ -35,7 +35,6 @@ const Game = ({ level, setTime, time, setRecord }) => {
 
     const Nums = Array.from(NumsArr);
     let tempArr = [];
-    console.log(Nums);
     for (let i = 0; i < maxNumber; i += 2) {
       if (Nums[i + 1] !== undefined) {
         tempArr.push([
@@ -44,7 +43,6 @@ const Game = ({ level, setTime, time, setRecord }) => {
         ]);
       }
     }
-    console.log(tempArr);
     setCards(tempArr);
   };
 
@@ -75,7 +73,7 @@ const Game = ({ level, setTime, time, setRecord }) => {
       setIsRunning(false);
       setTime(time);
       setGameEnd(true);
-      const date = getData();
+      const date = getDate();
       setdate(date);
       saveStorage(date, time, level);
     }
