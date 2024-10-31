@@ -1,87 +1,14 @@
 import styled from '@emotion/styled';
 import { useState, useEffect } from 'react';
 import Modal from './atoms/Modal';
-import getDate from '../utils/getDate';
-import saveStorage from '../utils/saveStorage';
+import useGame from '../hooks/useGame';
 
 const Game = ({ level, setTime, time }) => {
-  const gridSize = parseInt(level) + 2; // col 수
-  const perGameSize = gridSize * gridSize; // round 1 까지의 숫자
-  const maxNumber = perGameSize * 2; // round 2 까지의 숫자
-
-  const [cards, setCards] = useState([]); // 카드 담을 배열
-  const [nextNumber, setNextNumber] = useState(1); // 다음 카드
-  const [isRunning, setIsRunning] = useState(false); // 타이머 실행 여부
-  const [gameEnd, setGameEnd] = useState(false);
-  const [date, setdate] = useState('');
-
-  const closeModal = () => {
-    setGameEnd(false);
-    setTime(0);
-    setNextNumber(1);
-    shuffledCards();
-  };
-
-  const shuffledCards = () => {
-    const NumsArr = new Set(); // 중복 x
-
-    while (NumsArr.size < maxNumber) {
-      if (NumsArr.size % 2 === 0) {
-        NumsArr.add(Math.floor(Math.random() * perGameSize) + 1);
-      } else {
-        NumsArr.add(Math.floor(Math.random() * perGameSize) + perGameSize + 1);
-      }
-    }
-
-    const Nums = Array.from(NumsArr);
-    let tempArr = [];
-    for (let i = 0; i < maxNumber; i += 2) {
-      if (Nums[i + 1] !== undefined) {
-        tempArr.push([
-          { num: Nums[i], isClicked: false },
-          { num: Nums[i + 1], isClicked: false },
-        ]);
-      }
-    }
-    setCards(tempArr);
-  };
-
-  const handleCardClick = (index) => {
-    const clickedCard = cards[index];
-
-    if (!isRunning) {
-      setIsRunning(true);
-    }
-
-    if (clickedCard[0].num === nextNumber) {
-      setCards((prevCards) => {
-        const newCards = [...prevCards];
-        newCards[index][0].isClicked = true;
-        return newCards;
-      });
-      setNextNumber((prev) => prev + 1);
-    } else if (clickedCard[1].num === nextNumber) {
-      setCards((prevCards) => {
-        const newCards = [...prevCards];
-        newCards[index][1].isClicked = true;
-        return newCards;
-      });
-      setNextNumber((prev) => prev + 1);
-    }
-
-    if (nextNumber + 1 > maxNumber) {
-      setIsRunning(false);
-      setTime(time);
-      setGameEnd(true);
-      const date = getDate();
-      setdate(date);
-      saveStorage(date, time, level);
-    }
-  };
-
-  useEffect(() => {
-    shuffledCards();
-  }, [level]);
+  const { cards, gridSize, nextNumber, gameEnd, date, isRunning, closeModal, handleCardClick } = useGame(
+    level,
+    setTime,
+    time
+  );
 
   useEffect(() => {
     let interval = null;
