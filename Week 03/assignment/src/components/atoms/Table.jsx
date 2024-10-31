@@ -42,6 +42,9 @@ const Container = styled.table`
     text-align: center;
     border: 1px solid ${({ theme }) => theme.colors.lightBlue};
     vertical-align: middle;
-    height: 2rem;
+    height: 2.3rem;
+  }
+  & tbody tr:hover {
+    background-color: ${({ theme }) => theme.colors.tableHover};
   }
 `;

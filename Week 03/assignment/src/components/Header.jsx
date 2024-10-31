@@ -37,7 +37,7 @@ const Wrapper = styled.header`
     display: flex;
     align-items: center;
     color: white;
-    gap: 2rem;
+    gap: 3rem;
   }
 
   & h1,
@@ -50,6 +50,7 @@ const Wrapper = styled.header`
 
 const Btns = styled.menu`
   display: flex;
+  gap: 1.2rem;
 
   & button {
     background-color: ${({ theme }) => theme.colors.midBlue};

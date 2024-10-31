@@ -123,7 +123,7 @@ const Wrapper = styled.section`
   flex-direction: column;
   align-items: center;
   width: 60%;
-  margin: 5% 20%;
+  margin: 1% 20%;
   padding: 2% 0;
 
   & > h1 {
