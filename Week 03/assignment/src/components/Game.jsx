@@ -32,7 +32,14 @@ const Game = ({ level, setTime, time }) => {
           card[1].isClicked ? (
             <Blank key={`blank-${index}`} />
           ) : (
-            <Cell key={`card-${index}`} isClicked={card[0].isClicked} onClick={() => handleCardClick(index)}>
+            <Cell
+              key={`card-${index}`}
+              id={`card-${index}`}
+              isClicked={card[0].isClicked}
+              onClick={() => {
+                handleCardClick(index);
+              }}
+            >
               {card[0].isClicked ? card[1].num : card[0].num}
             </Cell>
           )
@@ -80,6 +87,11 @@ const Cell = styled.div`
   border: 1px solid black;
   color: white;
   background-color: ${({ isClicked, theme }) => (isClicked ? theme.colors.darkBlue : theme.colors.midBlue)};
+
+  &.flash {
+    background-color: white;
+    border: 1px solid white;
+  }
 `;
 
 const Blank = styled.div`

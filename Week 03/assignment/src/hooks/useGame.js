@@ -53,20 +53,27 @@ const useGame = (level, setTime, time) => {
       setIsRunning(true);
     }
 
-    if (clickedCard[0].num === nextNumber) {
-      setCards((prevCards) => {
-        const newCards = [...prevCards];
-        newCards[index][0].isClicked = true;
-        return newCards;
-      });
-      setNextNumber((prev) => prev + 1);
-    } else if (clickedCard[1].num === nextNumber) {
-      setCards((prevCards) => {
-        const newCards = [...prevCards];
-        newCards[index][1].isClicked = true;
-        return newCards;
-      });
-      setNextNumber((prev) => prev + 1);
+    if (clickedCard[0].num === nextNumber || clickedCard[1].num === nextNumber) {
+      const cardElement = document.getElementById(`card-${index}`);
+      cardElement.classList.add('flash');
+      setTimeout(() => {
+        cardElement.classList.remove('flash');
+
+        if (clickedCard[0].num === nextNumber) {
+          setCards((prevCards) => {
+            const newCards = [...prevCards];
+            newCards[index][0].isClicked = true;
+            return newCards;
+          });
+        } else {
+          setCards((prevCards) => {
+            const newCards = [...prevCards];
+            newCards[index][1].isClicked = true;
+            return newCards;
+          });
+        }
+        setNextNumber((prev) => prev + 1);
+      }, 80);
     }
 
     if (nextNumber + 1 > maxNumber) {
