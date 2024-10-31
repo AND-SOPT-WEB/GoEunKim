@@ -1,12 +1,12 @@
 import styled from '@emotion/styled';
 
-const Select = ({ setLevel, time }) => {
+const Select = ({ setLevel, time, level }) => {
   const handleChange = (e) => {
     setLevel(e.target.value);
   };
   return (
     <>
-      <SelectBox name="level" onChange={handleChange}>
+      <SelectBox name="level" onChange={handleChange} value={level}>
         <option value="1">Level1 🥸</option>
         <option value="2"> Level 2 🙄 </option>
         <option value="3"> Level 3 🥵</option>

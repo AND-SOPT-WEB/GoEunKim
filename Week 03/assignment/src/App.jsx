@@ -10,7 +10,7 @@ function App() {
   const [level, setLevel] = useState(1);
   return (
     <>
-      <Header time={time} isGameMode={isGameMode} setIsGameMode={setIsGameMode} setLevel={setLevel} />
+      <Header time={time} isGameMode={isGameMode} setIsGameMode={setIsGameMode} setLevel={setLevel} level={level} />
       {isGameMode ? <Game time={time} setTime={setTime} level={level} /> : <Ranking />}
     </>
   );
