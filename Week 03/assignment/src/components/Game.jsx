@@ -79,8 +79,8 @@ const Grid = styled.section`
 `;
 
 const Cell = styled.div`
-  width: 100px;
-  height: 100px;
+  width: 90px;
+  height: 90px;
   display: flex;
   align-items: center;
   justify-content: center;
