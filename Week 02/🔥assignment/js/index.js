@@ -65,9 +65,7 @@ deleteBtn.addEventListener('click', () => {
 });
 // 전체 선택 체크박스 이벤트리스너
 checkAllBtn.addEventListener('click', (e) => selecteAll(e.target));
-checkboxes.forEach((box) => {
-  box.addEventListener('click', checkingTop);
-});
+tableBody.addEventListener('click', checkingTop);
 
 // 모달 열기 버튼 이벤트리스너
 openModalBtn.addEventListener('click', (e) => modal.showModal());
