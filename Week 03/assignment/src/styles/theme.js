@@ -6,6 +6,7 @@ const theme = {
     blurWhite: '#F9F7F7',
     tableHover: '#f3f3f3',
     wrong: '#853232',
+    grey: '#656565',
   },
 };
 

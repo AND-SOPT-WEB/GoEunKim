@@ -59,6 +59,7 @@ const Wrapper = styled.section`
   width: 60%;
   margin: 1% 20%;
   padding: 2% 0;
+  font-family: 'STUNNING-Bd';
 
   & > h1 {
     font-size: 1.3rem;
@@ -100,6 +101,6 @@ const Cell = styled.div`
 `;
 
 const Blank = styled.div`
-  width: 100px;
-  height: 100px;
+  width: 90px;
+  height: 90px;
 `;

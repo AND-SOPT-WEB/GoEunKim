@@ -21,6 +21,8 @@ export default Select;
 const SelectBox = styled.select`
   padding: 0.5rem 1.5rem;
   border-radius: 0.3rem;
+  font-family: 'STUNNING-Bd';
+  color: ${({ theme }) => theme.colors.grey};
 `;
 
 const Timer = styled.h2`

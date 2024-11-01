@@ -44,6 +44,7 @@ const Wrapper = styled.section`
   }
 
   & header h1 {
+    font-family: 'STUNNING-Bd';
     font-size: 1.5rem;
   }
 

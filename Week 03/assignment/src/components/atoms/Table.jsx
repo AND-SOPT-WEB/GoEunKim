@@ -31,6 +31,8 @@ const Container = styled.table`
   width: 80%;
   margin: 2% 10% 5% 10%;
   padding-bottom: 2%;
+  font-family: 'S-CoreDream-3Light';
+  font-size: 0.9rem;
 
   & thead {
     background-color: ${({ theme }) => theme.colors.lightBlue};
@@ -42,7 +44,7 @@ const Container = styled.table`
     text-align: center;
     border: 1px solid ${({ theme }) => theme.colors.lightBlue};
     vertical-align: middle;
-    height: 2.3rem;
+    height: 2.4rem;
   }
   & tbody tr:hover {
     background-color: ${({ theme }) => theme.colors.tableHover};

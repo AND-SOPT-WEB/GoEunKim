@@ -32,6 +32,7 @@ const Wrapper = styled.header`
   align-items: center;
   padding: 2rem 9rem 2rem 5rem;
   background-color: ${({ theme }) => theme.colors.midBlue};
+  color: white;
 
   & section {
     display: flex;
@@ -40,11 +41,14 @@ const Wrapper = styled.header`
     gap: 3rem;
   }
 
-  & h1,
-  & h2 {
+  & h1 {
     font-size: 2rem;
-    font-weight: 800;
-    color: white;
+    font-family: 'YOnepickTTF-Bold';
+    font-size: 1.2rem;
+  }
+
+  & h2 {
+    font-size: 1.4rem;
   }
 `;
 
@@ -59,6 +63,8 @@ const Btns = styled.menu`
     padding: 0.5rem 1rem;
     color: white;
     font-size: 1.2rem;
+    font-weight: 200;
+    font-family: 'STUNNING-Bd';
   }
   & button:focus {
     background-color: ${({ theme }) => theme.colors.darkBlue};
