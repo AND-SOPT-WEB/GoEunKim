@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { useState, useEffect } from 'react';
 import Modal from './atoms/Modal';
-import useGame from '../hooks/useGame';
+import { useGame } from '../hooks';
 
 const Game = ({ level, setTime, time }) => {
   const { cards, gridSize, nextNumber, gameEnd, date, isRunning, closeModal, handleCardClick } = useGame(

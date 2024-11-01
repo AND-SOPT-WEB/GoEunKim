@@ -49,23 +49,29 @@ const useGame = (level, setTime, time) => {
   const handleCardClick = (index) => {
     const clickedCard = cards[index];
 
+    // 카드를 눌렀을때, 타이머가 작동되지 않았다면 Time ON
     if (!isRunning) {
       setIsRunning(true);
     }
 
+    // 옳은 카드 선택시
     if (clickedCard[0].num === nextNumber || clickedCard[1].num === nextNumber) {
+      // 카드 선택시, 클릭되는 효과를 위한 깜빡임 효과 (클래스 add -> remove)
       const cardElement = document.getElementById(`card-${index}`);
       cardElement.classList.add('flash');
       setTimeout(() => {
         cardElement.classList.remove('flash');
 
+        // 1라운드 (첫 카드판)
         if (clickedCard[0].num === nextNumber) {
           setCards((prevCards) => {
             const newCards = [...prevCards];
             newCards[index][0].isClicked = true;
             return newCards;
           });
-        } else {
+        }
+        // 2라운드 (두번쨰 카드판)
+        else {
           setCards((prevCards) => {
             const newCards = [...prevCards];
             newCards[index][1].isClicked = true;
@@ -75,6 +81,7 @@ const useGame = (level, setTime, time) => {
         setNextNumber((prev) => prev + 1);
       }, 80);
     } else {
+      // 잘못된 카드 선택시 UI로 알림
       const cardElement = document.getElementById(`card-${index}`);
       cardElement.classList.add('wrong');
       setTimeout(() => {
@@ -82,9 +89,9 @@ const useGame = (level, setTime, time) => {
       }, 200);
     }
 
+    // 게임 종료 처리
     if (nextNumber + 1 > maxNumber) {
       setIsRunning(false);
-      setTime((prev) => prev);
       setGameEnd(true);
       const date = getDate();
       setDate(date);
