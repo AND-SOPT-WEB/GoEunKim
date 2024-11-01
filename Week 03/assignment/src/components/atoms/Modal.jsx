@@ -31,16 +31,12 @@ export default Modal;
 
 const Wrapper = styled.dialog`
   top: 0;
-  right: 0;
-  left: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100vw;
   height: 100vh;
   background: #000000bd;
-  color: white;
-  box-sizing: none;
   color: black;
 `;
 
@@ -57,22 +53,20 @@ const ModalContent = styled.div`
   height: 60%;
 
   & h1 {
+    font-family: 'STUNNING-Bd';
     color: black;
-    font-size: 1.5rem;
-  }
-
-  & p {
-  fon
+    font-size: 1.3rem;
   }
 `;
 
 const Info = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.9rem;
 
   & p {
-    font-size: 1.1rem;
+    font-family: 'S-CoreDream-3Light';
+    font-size: 1rem;
   }
 `;
 
