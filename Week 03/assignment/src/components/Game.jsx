@@ -92,6 +92,11 @@ const Cell = styled.div`
   &.flash {
     background-color: white;
   }
+
+  &.wrong {
+    background-color: ${({ theme }) => theme.colors.wrong};
+    scale: 1.02;
+  }
 `;
 
 const Blank = styled.div`

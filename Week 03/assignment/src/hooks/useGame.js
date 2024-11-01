@@ -74,6 +74,12 @@ const useGame = (level, setTime, time) => {
         }
         setNextNumber((prev) => prev + 1);
       }, 80);
+    } else {
+      const cardElement = document.getElementById(`card-${index}`);
+      cardElement.classList.add('wrong');
+      setTimeout(() => {
+        cardElement.classList.remove('wrong');
+      }, 200);
     }
 
     if (nextNumber + 1 > maxNumber) {
