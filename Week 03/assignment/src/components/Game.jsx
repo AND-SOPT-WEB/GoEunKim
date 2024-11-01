@@ -84,13 +84,13 @@ const Cell = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid black;
+
   color: white;
+  font-size: 1.2rem;
   background-color: ${({ isClicked, theme }) => (isClicked ? theme.colors.darkBlue : theme.colors.midBlue)};
 
   &.flash {
     background-color: white;
-    border: 1px solid white;
   }
 `;
 
