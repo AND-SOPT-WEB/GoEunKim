@@ -1,0 +1,22 @@
+:root {
+  /* color */
+  --backGround: #e6edff;
+  --backGroundSub: #a0c0ff;
+  --mainColor: #8d95cf;
+  --mainColor2: #002266;
+  --labelColor: aliceblue;
+  --tableColor: #ffffff;
+  --backDropColor: #00000096;
+
+  /* hovercolor */
+  --hovermain: #9da3c9;
+  --hovermain2: #1a3161;
+  --hovertable: #cfcfcf67;
+
+  /* text color */
+  --textmain: #e6edff;
+  --textGrey: #3c3c3c;
+
+  /* btn padding */
+  --smbtnPadding: 0.9rem 2rem;
+}

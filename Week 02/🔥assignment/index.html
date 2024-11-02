@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="wave_icon.png" />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/index.css" />
+    <script src="https://kit.fontawesome.com/26acdb4290.js" crossorigin="anonymous"></script>
+    <title>Week2</title>
+  </head>
+  <body>
+    <header>
+      <span id="header__reload"><i class="fa-solid fa-rotate-right"></i></span>
+      <h1>WELCOME AND SOPT</h1>
+      <h3>🌊 앤솝 해피곤 🌊</h3>
+    </header>
+    <main>
+      <!-- 📍 필터  -->
+      <section class="filter">
+        <!-- form 이름 -->
+        <div class="filter__form">
+          <label for="name">이름</label>
+          <input id="name" type="text" placeholder="이름을 입력하세요" />
+        </div>
+        <!-- form 영문 이름 -->
+        <div class="filter__form">
+          <label for="english-name">영문이름</label>
+          <input id="english-name" type="text" placeholder="영문 이름을 입력하세요" />
+        </div>
+        <!-- form 깃헙 / 성별 / 역할 -->
+        <div class="filter__form">
+          <label for="github">GitHub</label>
+          <input id="github" type="text" placeholder="GitHub 아이디" />
+        </div>
+        <div class="filter__form">
+          <label for="gender">성별</label>
+          <select name="gender" id="gender" placeholder="성별 선택">
+            <option value="" selected disabled>성별</option>
+            <option value="female">여성 🙇🏻‍♀️</option>
+            <option value="male">남성 🙇🏻‍♂️</option>
+          </select>
+        </div>
+        <div class="filter__form">
+          <label for="role">역할</label>
+          <select name="role" id="role" type="text" placeholder="OB / YB 선택">
+            <option value="" selected disabled>OB / YB 선택</option>
+            <option value="OB">OB 🐥</option>
+            <option value="YB">YB 🐣</option>
+          </select>
+        </div>
+        <!-- form 조 번호-->
+        <div class="filter__form">
+          <label for="week1">1주차 🌱<br />금잔디조 </label>
+          <input id="week1" type="Number" placeholder="1주차 금잔디조를 입력하세요 (1~9)" />
+        </div>
+        <div class="filter__form">
+          <label for="week2">2주차 🌱<br />금잔디조 </label>
+          <input id="week2" type="Number" placeholder="2주차 금잔디조를 입력하세요 (1~9)" />
+        </div>
+        <!-- form 버튼 -->
+        <div class="filter__form">
+          <button class="filter__btn--clear">초기화</button>
+        </div>
+        <div class="filter__form">
+          <button class="filter__btn--search">검색</button>
+        </div>
+      </section>
+      <!-- 📍 테이블 내용  -->
+      <section class="data_board">
+        <div class="data_board__btns">
+          <button class="data_board--delete">선택삭제</button>
+          <button class="data_board--add">추가</button>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th scope="col"><input id="check_all" type="checkbox" /></th>
+              <th scope="col">이름</th>
+              <th scope="col">영문이름</th>
+              <th scope="col">GitHub</th>
+              <th scope="col">성별</th>
+              <th scope="col">역할</th>
+              <th scope="col">1주차 금잔디</th>
+              <th scope="col">2주차 금잔디</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </section>
+    </main>
+    <!-- 📍 입력 모달  -->
+    <dialog id="dialog">
+      <h2>✍🏻 새로운 멤버 입력 👀</h2>
+      <form method="dialog">
+        <button type="button" id="closeDialogBtn">X</button>
+        <div class="input_field">
+          <label for="name">이름</label>
+          <input id="dialog_name" type="text" placeholder="이름을 입력하세요" />
+        </div>
+        <div class="input_field">
+          <label for="english-name">영문이름</label>
+          <input id="dialog_english-name" type="text" placeholder="영문 이름을 입력하세요" />
+        </div>
+        <div class="input_field">
+          <label for="github">GitHub</label>
+          <input id="dialog_github" type="text" placeholder="GitHub 아이디" />
+        </div>
+        <div class="selects">
+          <div class="input_field">
+            <label for="gender">성별</label>
+            <select name="gender" id="dialog_gender" placeholder="성별 선택">
+              <option value="" selected disabled>성별</option>
+              <option value="female">여성 🙇🏻‍♀️</option>
+              <option value="male">남성 🙇🏻‍♂️</option>
+            </select>
+          </div>
+          <div class="input_field">
+            <label for="role">역할</label>
+            <select name="role" id="dialog_role" type="text" placeholder="OB / YB 선택">
+              <option value="" selected disabled>OB / YB 선택</option>
+              <option value="OB">OB 🐥</option>
+              <option value="YB">YB 🐣</option>
+            </select>
+          </div>
+        </div>
+        <div class="input_field">
+          <label for="week1">1주차 금잔디조</label>
+          <input id="dialog_week1" type="Number" placeholder="1주차 금잔디조를 입력하세요 (1~9)" />
+        </div>
+        <div class="input_field">
+          <label for="week2">2주차 금잔디조</label>
+          <input id="dialog_week2" type="Number" placeholder="2주차 금잔디조를 입력하세요 (1~9)" />
+        </div>
+        <button id="addDataBtn">추가하기</button>
+      </form>
+    </dialog>
+    <script type="module" src="./js/index.js"></script>
+    <script type="module" src="./js/modules/filter.js"></script>
+    <script type="module" src="./js/modules/addData.js"></script>
+  </body>
+</html>
