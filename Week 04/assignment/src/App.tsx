@@ -3,6 +3,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { theme, global } from './styles';
 import { Global, ThemeProvider } from '@emotion/react';
 import Login from './pages/Login/Login';
+import Signup from './pages/Signup/Signup';
 
 function App() {
   const router = createBrowserRouter([
@@ -12,7 +13,7 @@ function App() {
     },
     {
       path: '/signup',
-      element: <>2</>,
+      element: <Signup />,
     },
     { path: '/mypage', element: <>3</> },
   ]);
