@@ -101,6 +101,9 @@ const useGame = (level, setTime, time) => {
 
   useEffect(() => {
     shuffledCards();
+    setIsRunning(false);
+    setTime(0);
+    setNextNumber(1);
   }, [level]);
 
   return {

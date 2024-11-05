@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import Modal from './atoms/Modal';
 import { useGame } from '../hooks';
 
@@ -19,8 +19,9 @@ const Game = ({ level, setTime, time }) => {
     } else if (!isRunning && time !== 0) {
       clearInterval(interval);
     }
+
     return () => clearInterval(interval);
-  }, [isRunning, setTime, time]);
+  }, [isRunning, setTime, level]);
 
   return (
     <Wrapper>
