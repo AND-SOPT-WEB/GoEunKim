@@ -1,7 +1,6 @@
 import styled from '@emotion/styled';
 
 const Table = ({ records }) => {
-  console.log(records);
   return (
     <Container>
       <thead>

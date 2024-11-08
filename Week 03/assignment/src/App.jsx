@@ -1,6 +1,5 @@
-import './App.css';
 import Header from './components/Header';
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import Ranking from './components/Ranking';
 import Game from './components/Game';
 
