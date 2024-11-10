@@ -37,10 +37,29 @@ const Form = styled.section`
 const Input = styled.input<{ isDisabled?: boolean }>`
   font-family: 'Pretendard-Regular';
   height: 4rem;
+  padding-left: 2rem;
 
   border: ${({ isDisabled }) => (isDisabled ? `1px solid ${theme.colors.waring}` : `1px solid ${theme.colors.grey}`)};
 `;
+const InputWrapper = styled.div`
+  position: relative;
+  & input {
+    height: 4rem;
+    width: -webkit-fill-available;
+  }
+  & button {
+    width: 4rem;
+    position: absolute;
+    top: 0;
+    right: 2rem;
+    background: none;
+  }
 
+  & i {
+    color: ${theme.colors.grey};
+    font-size: 1.8rem;
+  }
+`;
 const Label = styled.label`
   font-size: 1.7rem;
   font-weight: 700;
@@ -52,4 +71,4 @@ const SubmitBtn = styled.button`
   }
 `;
 
-export { Form, Input, Label, SubmitBtn };
+export { Form, Input, Label, SubmitBtn, InputWrapper };
