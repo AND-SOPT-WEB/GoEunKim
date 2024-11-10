@@ -1,7 +1,7 @@
-import SignupForm from '../../components/SignupForm/SignupForm';
-import { useState, useRef } from 'react';
-import { Wrapper } from '../Login/Login.style';
-import { Title, Footer } from './Signup.style';
+import SignupForm from '../../components/SignupForm/Form';
+import { useState } from 'react';
+import { Wrapper, Title } from '../Login/Login.style';
+import { Footer } from './Signup.style';
 import { Link } from 'react-router-dom';
 
 const Signup = () => {

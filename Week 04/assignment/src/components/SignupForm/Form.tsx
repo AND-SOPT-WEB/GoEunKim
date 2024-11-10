@@ -1,5 +1,4 @@
-import { Input, Form } from '../../pages/Login/Login.style';
-import { Label, SubmitBtn } from './SignupForm.style';
+import { Label, SubmitBtn, Input, Form } from './Form.style';
 
 type Info = {
   label: string;
@@ -17,7 +16,7 @@ const SignupForm: React.FC<Info> = ({ label, description, onNext, value, onChang
   return (
     <Form>
       <Label>{label}</Label>
-      <Input disabled={isDisabled} placeholder={description} value={value} onChange={onChange}></Input>
+      <Input isDisabled={isDisabled} placeholder={description} value={value} onChange={onChange}></Input>
       {isDisabled && <span>{errmeg}</span>}
       <SubmitBtn disabled={value.length === 0 || isDisabled} onClick={onNext}>
         다음

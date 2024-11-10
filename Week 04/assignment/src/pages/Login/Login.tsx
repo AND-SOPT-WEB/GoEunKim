@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
-import { Wrapper, Title, Form, Input } from './Login.style';
+import { Wrapper, Title } from './Login.style';
+import { Form, Input } from '../../components/SignupForm/Form.style';
 
 const Login = () => {
   return (
