@@ -1,10 +1,11 @@
-import { createRoutesFromChildren, Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Wrapper, Title } from './Login.style';
 import { Form, Input } from '../../components/SignupForm/Form.style';
 import { useRef, useState } from 'react';
 import login from '../../apis/user/login';
 
 const Login = () => {
+  const navigate = useNavigate();
   const idRef = useRef<HTMLInputElement | null>(null);
   const pwdRef = useRef<HTMLInputElement | null>(null);
   const [errmeg, setErrmeg] = useState<string>('');
@@ -16,22 +17,18 @@ const Login = () => {
     }
 
     const prop = { username: idRef.current.value, password: pwdRef.current.value };
-    try {
-      console.log(prop);
-      const res = await login(prop);
-      console.log(res);
-      switch (res) {
-        case '01':
-          setErrmeg('비밀번호가 일치하지 않습니다.');
-          break;
-        case '02':
-          setErrmeg('아이디가 일치하지 않습니다.');
-          break;
-        default:
-          setErrmeg('');
-      }
-    } catch (err) {
-      alert(err);
+    const res = await login(prop);
+    switch (res) {
+      case '01':
+        setErrmeg('비밀번호가 일치하지 않습니다.');
+        break;
+      case '02':
+        setErrmeg('아이디가 일치하지 않습니다.');
+        break;
+      default:
+        setErrmeg('');
+        localStorage.setItem('token', res);
+        navigate('/mypage');
     }
   };
   return (

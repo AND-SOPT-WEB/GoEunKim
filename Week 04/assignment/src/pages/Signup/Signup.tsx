@@ -4,7 +4,7 @@ import { Wrapper, Title } from '../Login/Login.style';
 import { Footer } from './Signup.style';
 import { Link, useNavigate } from 'react-router-dom';
 import signup from '../../apis/user/signup';
-import isPwdValide from '../../utils/isPwdvalide';
+import isPwdValide from '../../utils/isPwdValide';
 
 const Signup = () => {
   const navigate = useNavigate();
