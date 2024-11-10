@@ -31,6 +31,10 @@ const global = css`
     text-decoration: none;
   }
 
+  input {
+    outline: none;
+  }
+
   @font-face {
     font-family: '양진체';
     src: url('https://fastly.jsdelivr.net/gh/supernovice-lab/font@0.9/yangjin.woff') format('woff');
