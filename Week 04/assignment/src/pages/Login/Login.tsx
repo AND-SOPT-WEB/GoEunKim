@@ -5,7 +5,7 @@ const Login = () => {
   return (
     <Wrapper>
       <Title>로그인</Title>
-      <Form>
+      <Form className="login">
         <Input placeholder="아이디"></Input>
         <Input placeholder="비밀번호"></Input>
         <button>로그인</button>

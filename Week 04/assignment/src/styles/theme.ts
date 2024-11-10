@@ -1,6 +1,7 @@
 const theme = {
   colors: {
     carrot: '#FF8A3D',
+    yellow: '#E9BC83',
     green: '#339F46',
     waring: '#CE2939',
     success: '#2896AD',

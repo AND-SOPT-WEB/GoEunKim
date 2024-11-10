@@ -28,6 +28,11 @@ const Form = styled.section`
     font-family: 'Pretendard-Regular';
   }
 
+  &.login button:hover {
+    background-color: ${theme.colors.yellow};
+    transition: 2s ease;
+  }
+
   & p {
     text-align: center;
     font-size: 1.5rem;
