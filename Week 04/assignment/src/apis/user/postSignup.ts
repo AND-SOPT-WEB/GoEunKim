@@ -1,4 +1,5 @@
 import instance from '..';
+import { AxiosError } from 'axios';
 
 type signupDataType = {
   username: string;
@@ -6,15 +7,19 @@ type signupDataType = {
   hobby: string;
 };
 
-const signup = async (signupData: signupDataType) => {
+const postSignup = async (signupData: signupDataType) => {
   try {
     const res = await instance.post('/user', signupData);
     return res;
-  } catch (err) {
-    if (err) {
-      throw err;
+  } catch (err: unknown) {
+    if (err instanceof AxiosError) {
+      const response = err.response;
+      if (response) {
+        return response.data.code;
+      }
     }
+    throw err;
   }
 };
 
-export default signup;
+export default postSignup;

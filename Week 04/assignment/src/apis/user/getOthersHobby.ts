@@ -1,15 +1,10 @@
 import instance from '..';
 import { AxiosError } from 'axios';
 
-type LoginType = {
-  username: string;
-  password: string;
-};
-
-const postLogin = async (loginData: LoginType) => {
+const getOthersHobby = async (no: string | unknown) => {
   try {
-    const res = await instance.post('/login', loginData);
-    return res.data.result.token;
+    const res = await instance.get(`/user/${no}/hobby`);
+    return res.data.result;
   } catch (err: unknown) {
     if (err instanceof AxiosError) {
       const response = err.response;
@@ -21,4 +16,4 @@ const postLogin = async (loginData: LoginType) => {
   }
 };
 
-export default postLogin;
+export default getOthersHobby;
