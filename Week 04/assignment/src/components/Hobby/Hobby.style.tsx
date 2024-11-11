@@ -30,7 +30,7 @@ const Container = styled.section`
   gap: 1rem;
   width: 50%;
   margin: 2% 25%;
-  padding-top: 2rem;
+  padding-top: 1rem;
 
   & input,
   & button {
