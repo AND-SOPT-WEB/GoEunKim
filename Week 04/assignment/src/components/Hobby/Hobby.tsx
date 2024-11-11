@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { Wrapper, Container, SubTitle, Info } from './Hobby.style';
-import getOtherHobby from '../../apis/user/getOtherHobby';
-import getMyHobby from '../../apis/user/getMyHobby';
+import { getMyHobby, getOthersHobby } from '../../apis/user';
 
 const Hobby = () => {
   const userNo = useRef<HTMLInputElement>(null);
@@ -11,7 +10,9 @@ const Hobby = () => {
   useEffect(() => {
     const getHobby = async () => {
       const res = await getMyHobby();
-      setMyhobby(res.hobby);
+      if (res.hobby) {
+        setMyhobby(res.hobby);
+      }
     };
     getHobby();
   }, []);
@@ -19,7 +20,7 @@ const Hobby = () => {
   const handleSubmitClick = async () => {
     if (userNo.current?.value) {
       const no = userNo.current?.value;
-      const res = await getOtherHobby(no);
+      const res = await getOthersHobby(no);
       switch (res) {
         case '01':
           setmeg('일치하는 회원번호가 없습니다');

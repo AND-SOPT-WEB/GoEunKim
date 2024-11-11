@@ -2,7 +2,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { Wrapper, Title } from './Login.style';
 import { Form, Input } from '../../components/SignupForm/Form.style';
 import { useRef, useState } from 'react';
-import postLogin from '../../apis/user/postLogin';
+import { postLogin } from '../../apis/user';
 
 const Login = () => {
   const navigate = useNavigate();

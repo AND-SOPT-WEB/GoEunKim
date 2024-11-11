@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
 import { Wrapper, Container, SubTitle } from '../Hobby/Hobby.style';
-import putEdit from '../../apis/user/putEdit';
+import { putEdit } from '../../apis/user';
 
 const Edit = () => {
   const pwdRef = useRef<HTMLInputElement | null>(null);
@@ -17,7 +17,6 @@ const Edit = () => {
       if (hobby) payload.hobby = hobby;
 
       const res = await putEdit(payload);
-      console.log(res);
       switch (res) {
         case '00':
           setMeg('회원정보 수정에 실패했습니다 😢');

@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { Wrapper, Title } from '../Login/Login.style';
 import { Footer } from './Signup.style';
 import { Link, useNavigate } from 'react-router-dom';
-import postSignup from '../../apis/user/postSignup';
+import { postSignup } from '../../apis/user';
 import isPwdValide from '../../utils/isPwdValide';
 
 const Signup = () => {
