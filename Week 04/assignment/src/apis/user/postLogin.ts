@@ -1,14 +1,10 @@
 import instance from '..';
 import { AxiosError } from 'axios';
+import { LoginType } from '../../types/apiType';
 
-type LoginType = {
-  username: string;
-  password: string;
-};
-
-const postLogin = async (loginData: LoginType) => {
+const postLogin = async (prop: LoginType) => {
   try {
-    const res = await instance.post('/login', loginData);
+    const res = await instance.post('/login', prop);
     instance.defaults.headers['token'] = res.data.result.token; // Axios 인터셉터를 통한 헤더 토큰 갱신
     return res.data.result.token;
   } catch (err: unknown) {

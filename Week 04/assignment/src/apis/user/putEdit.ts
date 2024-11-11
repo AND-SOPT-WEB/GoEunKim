@@ -1,10 +1,6 @@
 import instance from '..';
 import { AxiosError } from 'axios';
-
-type EditType = {
-  password?: string;
-  hobby?: string;
-};
+import { EditType } from '../../types/apiType';
 
 const putEdit = async (prop: EditType) => {
   try {
