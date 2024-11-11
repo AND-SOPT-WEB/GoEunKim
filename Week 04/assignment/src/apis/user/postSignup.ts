@@ -5,6 +5,7 @@ import { signupDataType } from '../../types/apiType';
 const postSignup = async (prop: signupDataType) => {
   try {
     const res = await instance.post('/user', prop);
+    instance.defaults.headers['token'] = res.data.result.token;
     return res;
   } catch (err: unknown) {
     if (err instanceof AxiosError) {

@@ -1,22 +1,5 @@
 import { Label, SubmitBtn, Input, Form, InputWrapper } from './Form.style';
-
-type Info = {
-  label: string;
-  type?: string;
-  description: string;
-  descriptionforCheck?: string;
-  onNext: () => void; // 함수
-  value: string;
-  checkpassword?: string;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  oncheckpwdChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  isDisabled: boolean;
-  errmeg: string;
-  handleSingupClick?: () => void;
-  passwordError?: string;
-  handlevisiblechange?: () => void;
-  isPwdVisible?: boolean;
-};
+import { Info } from '../../types/signupType';
 
 // React.Fc  (함수형 컴포넌트의 약자)
 // <Info>는 전달 받는 props의 타입을 지정해줌
