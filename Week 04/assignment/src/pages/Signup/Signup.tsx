@@ -1,60 +1,26 @@
 import SignupForm from '../../components/SignupForm/Form';
-import { useState } from 'react';
+import useSignup from '../../hooks/useSingup';
 import { Wrapper, Title } from '../Login/Login.style';
 import { Footer } from './Signup.style';
-import { Link, useNavigate } from 'react-router-dom';
-import { postSignup } from '../../apis/user';
-import isPwdValide from '../../utils/isPwdValide';
+import { Link } from 'react-router-dom';
 
 const Signup = () => {
-  const navigate = useNavigate();
-  const [step, setStep] = useState<'이름' | '비밀번호' | '취미' | '등록성공'>('이름');
-
-  const [name, setName] = useState<string>('');
-  const [password, setPassword] = useState<string>('');
-  const [checkpassword, setCheckpassword] = useState<string>('');
-  const [hobby, setHobby] = useState<string>('');
-
-  const [passwordError, setPasswordError] = useState<string>('');
-  const [isPwdVisible, setIsPwdVisible] = useState<boolean>(false);
-
-  // <input> 요소에서 발생하는 이벤트 -> React.ChangeEvent<HTMLInputElement>로 지정
-  const handleNamechange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setName(e.target.value);
-  };
-  const handlepasswordchange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setPassword(e.target.value);
-  };
-  const handlehobbychange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setHobby(e.target.value);
-  };
-  const handlecheckpwdchange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setCheckpassword(e.target.value);
-    if (!isPwdValide(password, e.target.value)) {
-      setPasswordError('비밀번호가 일치하지 않습니다.');
-    } else {
-      setPasswordError('');
-    }
-  };
-
-  const handlevisiblechange = () => {
-    setIsPwdVisible((prev) => !prev);
-  };
-
-  const handleSingupClick = async () => {
-    try {
-      const res = await postSignup({ username: name, password, hobby });
-      console.log(res);
-      alert('환영합니다! 회원가입 성공 🏰🔥');
-      navigate('/');
-    } catch (err: any) {
-      const errCode = err.response.data.code;
-      if (errCode == '00') {
-        alert('회원이름이 중복되었습니다 😢 다시 입력해주세요!');
-        setStep('이름');
-      }
-    }
-  };
+  const {
+    step,
+    setStep,
+    name,
+    handleNamechange,
+    password,
+    handlepasswordchange,
+    checkpassword,
+    handlecheckpwdchange,
+    hobby,
+    handlehobbychange,
+    passwordError,
+    isPwdVisible,
+    handlevisiblechange,
+    handleSingupClick,
+  } = useSignup();
 
   return (
     <Wrapper>
