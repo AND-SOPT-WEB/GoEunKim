@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { Wrapper, Title } from '../Login/Login.style';
 import { Footer } from './Signup.style';
 import { Link, useNavigate } from 'react-router-dom';
-import signup from '../../apis/user/signup';
+import postSignup from '../../apis/user/postSignup';
 import isPwdValide from '../../utils/isPwdValide';
 
 const Signup = () => {
@@ -43,8 +43,7 @@ const Signup = () => {
 
   const handleSingupClick = async () => {
     try {
-      console.log(name, password, hobby);
-      const res = await signup({ username: name, password, hobby });
+      const res = await postSignup({ username: name, password, hobby });
       console.log(res);
       alert('환영합니다! 회원가입 성공 🏰🔥');
       navigate('/');

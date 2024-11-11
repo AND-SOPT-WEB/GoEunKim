@@ -2,7 +2,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { Wrapper, Title } from './Login.style';
 import { Form, Input } from '../../components/SignupForm/Form.style';
 import { useRef, useState } from 'react';
-import login from '../../apis/user/login';
+import postLogin from '../../apis/user/postLogin';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -17,7 +17,7 @@ const Login = () => {
     }
 
     const prop = { username: idRef.current.value, password: pwdRef.current.value };
-    const res = await login(prop);
+    const res = await postLogin(prop);
     switch (res) {
       case '01':
         setErrmeg('비밀번호가 일치하지 않습니다.');

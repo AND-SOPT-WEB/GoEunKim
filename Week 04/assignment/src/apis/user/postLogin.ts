@@ -5,7 +5,7 @@ type LoginType = {
   password: string;
 };
 
-const login = async (loginData: LoginType) => {
+const postLogin = async (loginData: LoginType) => {
   try {
     const res = await instance.post('/login', loginData);
     return res.data.result.token;
@@ -14,4 +14,4 @@ const login = async (loginData: LoginType) => {
   }
 };
 
-export default login;
+export default postLogin;

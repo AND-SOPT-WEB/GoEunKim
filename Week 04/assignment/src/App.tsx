@@ -5,7 +5,8 @@ import { Global, ThemeProvider } from '@emotion/react';
 import Login from './pages/Login/Login';
 import Signup from './pages/Signup/Signup';
 import Mypage from './pages/Mypage/Mypage';
-import Hobby from './components/Hobby/hobby';
+import Hobby from './components/Hobby/Hobby';
+import Edit from './components/Edit/Edit';
 
 function App() {
   const router = createBrowserRouter([
@@ -27,7 +28,7 @@ function App() {
         },
         {
           path: 'edit',
-          element: <h1>dddddddd</h1>,
+          element: <Edit />,
         },
       ],
     },

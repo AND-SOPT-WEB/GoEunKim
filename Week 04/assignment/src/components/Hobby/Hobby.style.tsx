@@ -38,7 +38,9 @@ const Container = styled.section`
   }
   & input {
     border: 0.1rem solid ${theme.colors.grey};
+    padding-left: 1rem;
   }
+
   & button {
     background-color: ${theme.colors.carrot};
     border: none;
