@@ -39,18 +39,19 @@ const useSignup = () => {
   };
 
   const handleSingupClick = async () => {
-    try {
-      const res = await postSignup({ username: name, password, hobby });
-      console.log(res);
+    const res = await postSignup({ username: name.trim(), password, hobby });
+    console.log(res);
+
+    if (res === '00') {
+      alert('회원이름이 중복되었습니다 😢 다시 입력해주세요!');
+      setStep('이름');
+      setName('');
+      setPassword('');
+      setCheckpassword('');
+    } else {
       alert('환영합니다! 회원가입 성공 🏰🔥');
       setStep('등록성공');
       navigate('/mypage');
-    } catch (err: any) {
-      const errCode = err.response.data.code;
-      if (errCode === '00') {
-        alert('회원이름이 중복되었습니다 😢 다시 입력해주세요!');
-        setStep('이름');
-      }
     }
   };
 

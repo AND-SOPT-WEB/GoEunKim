@@ -13,8 +13,10 @@ const useLogin = () => {
       setErrmeg('아이디와 비밀번호를 모두 입력해주세요!');
       return;
     }
+    const username = idRef.current.value.trim();
+    const password = pwdRef.current.value.trim();
 
-    const prop = { username: idRef.current.value, password: pwdRef.current.value };
+    const prop = { username, password };
     const res = await postLogin(prop);
     switch (res) {
       case '01':
