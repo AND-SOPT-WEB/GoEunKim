@@ -51,7 +51,7 @@ const useSignup = () => {
     } else {
       alert('환영합니다! 회원가입 성공 🏰🔥');
       setStep('등록성공');
-      navigate('/mypage');
+      navigate('/');
     }
   };
 
