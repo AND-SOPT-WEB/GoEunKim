@@ -16,8 +16,8 @@ const Form = styled.section`
   }
 
   &.login button:hover {
-    background-color: ${theme.colors.yellow};
-    transition: 2s ease;
+    background-color: ${theme.colors.green};
+    transition: 1s ease;
   }
 
   & p {
