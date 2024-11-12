@@ -47,7 +47,7 @@ const Signup = () => {
           onChange={handlepasswordchange}
           oncheckpwdChange={handlecheckpwdchange}
           handlevisiblechange={handlevisiblechange}
-          isDisabled={password.length > 7}
+          isDisabled={password.length > 7 || checkpassword.length > 7}
           errmeg="비밀번호는 8자 이하로 입력해주세요"
           passwordError={passwordError}
           isPwdVisible={isPwdVisible}
