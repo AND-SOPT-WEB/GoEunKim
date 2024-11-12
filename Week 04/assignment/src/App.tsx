@@ -1,4 +1,3 @@
-import './App.css';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { theme, global } from './styles';
 import { Global, ThemeProvider } from '@emotion/react';
