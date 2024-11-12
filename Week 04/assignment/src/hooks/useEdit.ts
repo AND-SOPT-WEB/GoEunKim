@@ -1,7 +1,9 @@
 import { useRef, useState } from 'react';
 import { putEdit } from '../apis/user';
+import { useNavigate } from 'react-router-dom';
 
 const useEdit = () => {
+  const navigate = useNavigate();
   const pwdRef = useRef<HTMLInputElement | null>(null);
   const hobbyRef = useRef<HTMLInputElement | null>(null);
   const [meg, setMeg] = useState<string>('');
@@ -21,11 +23,12 @@ const useEdit = () => {
           setMeg('회원정보 수정에 실패했습니다 😢');
           break;
         default:
-          setMeg('수정이 완료되었습니다 👀');
+          alert('수정이 완료되었습니다 👀');
+          navigate('/');
+
           break;
       }
     } else {
-      setMeg('비밀번호 또는 취미 중 하나를 입력해주세요🥸');
       alert('비밀번호 또는 취미 중 하나를 입력해주세요 🥸');
     }
   };

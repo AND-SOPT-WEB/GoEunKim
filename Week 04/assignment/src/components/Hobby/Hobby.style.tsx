@@ -35,6 +35,7 @@ const Container = styled.section`
   & input,
   & button {
     height: 4rem;
+    font-size: 1.5rem;
   }
   & input {
     border: 0.1rem solid ${theme.colors.grey};
